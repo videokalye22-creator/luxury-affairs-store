@@ -589,15 +589,75 @@ var LA = (function () {
   }
 
   /* ── Trust Page (archive) ────────────────────────────────── */
+  var R2_BASE = 'https://pub-461f36b5362b494c9d4e4eb82ef799b5.r2.dev';
+
   var ARCHIVE_MONTHS = [
-    {label:'MAY-26',emoji:'📦'},{label:'APR-26',emoji:'💳'},{label:'MAR-26',emoji:'📱'},
-    {label:'FEB-26',emoji:'📸'},{label:'JAN-26',emoji:'📦'},{label:'DEC-25',emoji:'💳'},
-    {label:'NOV-25',emoji:'📱'},{label:'OCT-25',emoji:'📸'},{label:'SEP-25',emoji:'📦'},
-    {label:'AUG-25',emoji:'💳'},{label:'JUL-25',emoji:'📱'},{label:'JUN-25',emoji:'📸'},
-    {label:'MAY-25',emoji:'📦'},{label:'APR-25',emoji:'💳'},{label:'MAR-25',emoji:'📱'},
-    {label:'2024',  emoji:'📸'},{label:'2023',  emoji:'📦'}
+    {label:'MAY-26',emoji:'📦', images:[]},
+    {label:'APR-26',emoji:'💳', images:[]},
+    {label:'MAR-26',emoji:'📱', images:[]},
+    {
+      label:'FEB-26',emoji:'📸',
+      images:[
+        'imgi_100_IMG_9597.webp','imgi_101_IMG_9595.webp','imgi_102_IMG_9580.webp',
+        'imgi_103_IMG_9577.webp','imgi_104_IMG_9578.webp','imgi_105_IMG_9579.webp',
+        'imgi_106_IMG_9576.webp','imgi_107_IMG_9575.webp','imgi_108_IMG_9574.webp',
+        'imgi_109_IMG_9718.webp','imgi_110_IMG_9712.webp','imgi_111_IMG_9716.webp',
+        'imgi_112_IMG_9704.webp','imgi_113_IMG_9593.webp','imgi_114_IMG_9719.webp',
+        'imgi_115_IMG_9714.webp','imgi_116_IMG_9720.webp','imgi_117_IMG_9708.webp',
+        'imgi_118_IMG_9587.webp','imgi_119_IMG_9707.webp','imgi_120_IMG_9717.webp',
+        'imgi_121_IMG_9713.webp','imgi_122_IMG_9711.webp','imgi_123_IMG_9709.webp',
+        'imgi_124_IMG_9715.webp','imgi_125_IMG_9710.webp','imgi_126_IMG_9706.webp',
+        'imgi_127_IMG_9705.webp','imgi_128_IMG_9702.webp','imgi_129_IMG_9588.webp',
+        'imgi_130_IMG_9703.webp','imgi_131_IMG_9589.webp','imgi_132_IMG_9592.webp',
+        'imgi_133_IMG_9591.webp','imgi_134_IMG_9590.webp','imgi_135_IMG-20260128-WA0025.webp',
+        'imgi_136_IMG-20260128-WA0027.webp','imgi_137_IMG-20260128-WA0024.webp',
+        'imgi_16_IMG_9788.webp','imgi_18_IMG_9539.webp','imgi_19_IMG_9081.webp',
+        'imgi_20_IMG_8629.webp','imgi_21_IMG_8093.webp','imgi_22_IMG_7203.webp',
+        'imgi_23_IMG_5879.webp','imgi_24_IMG_6818.webp','imgi_25_IMG-20250808-WA0020.webp',
+        'imgi_26_IMG-20250518-WA0083.webp','imgi_27_IMG-20250701-WA0036.webp',
+        'imgi_28_IMG-20250513-WA0029.webp','imgi_29_IMG-20250917-WA0370.webp',
+        'imgi_30_IMG-20250207-WA0052.webp','imgi_31_reviews(96).webp',
+        'imgi_32_IMG_9790.webp','imgi_33_IMG_9795.webp','imgi_34_IMG_9793.webp',
+        'imgi_35_IMG_9794.webp','imgi_36_IMG_9791.webp','imgi_37_IMG_9792.webp',
+        'imgi_38_IMG_9787.webp','imgi_39_IMG_9789.webp','imgi_40_IMG_9769.webp',
+        'imgi_41_IMG_9767.webp','imgi_42_IMG_9766.webp','imgi_43_IMG_9768.webp',
+        'imgi_44_IMG_9749.webp','imgi_45_IMG_9750.webp','imgi_46_IMG_9747.webp',
+        'imgi_47_IMG_9748.webp','imgi_48_IMG_9746.webp','imgi_49_IMG_9744.webp',
+        'imgi_50_IMG_9745.webp','imgi_51_IMG_9742.webp','imgi_52_IMG_9743.webp',
+        'imgi_53_IMG_9741.webp','imgi_54_IMG_9736.webp','imgi_55_IMG_9737.webp',
+        'imgi_56_IMG_9740.webp','imgi_57_IMG_9738.webp','imgi_58_IMG_9739.webp',
+        'imgi_59_IMG_9735.webp','imgi_60_IMG_9733.webp','imgi_61_IMG_9732.webp',
+        'imgi_62_IMG_9734.webp','imgi_63_IMG_9730.webp','imgi_64_IMG_9731.webp',
+        'imgi_65_IMG_9729.webp','imgi_66_IMG_9728.webp','imgi_67_IMG_9689.webp',
+        'imgi_68_IMG_9683.webp','imgi_69_IMG_9688.webp','imgi_70_IMG_9687.webp',
+        'imgi_71_IMG_9686.webp','imgi_72_IMG_9685.webp','imgi_73_IMG_9682.webp',
+        'imgi_74_IMG_9681.webp','imgi_75_IMG_9677.webp','imgi_76_IMG_9678.webp',
+        'imgi_77_IMG_9680.webp','imgi_78_IMG_9675.webp','imgi_79_IMG_9679.webp',
+        'imgi_80_IMG_9676.webp','imgi_81_IMG_9654.webp','imgi_82_IMG_9653.webp',
+        'imgi_83_IMG_9652.webp','imgi_84_IMG_9648.webp','imgi_85_IMG_9642.webp',
+        'imgi_86_IMG_9647.webp','imgi_87_IMG_9646.webp','imgi_88_IMG_9643.webp',
+        'imgi_89_IMG_9645.webp','imgi_90_IMG_9644.webp','imgi_91_IMG_9600.webp',
+        'imgi_92_IMG_9639.webp','imgi_93_IMG_9641.webp','imgi_94_IMG_9640.webp',
+        'imgi_95_IMG_9638.webp','imgi_96_IMG_9601.webp','imgi_97_IMG_9599.webp',
+        'imgi_98_IMG_9596.webp','imgi_99_IMG_9598.webp'
+      ]
+    },
+    {label:'JAN-26',emoji:'📦', images:[]},
+    {label:'DEC-25',emoji:'💳', images:[]},
+    {label:'NOV-25',emoji:'📱', images:[]},
+    {label:'OCT-25',emoji:'📸', images:[]},
+    {label:'SEP-25',emoji:'📦', images:[]},
+    {label:'AUG-25',emoji:'💳', images:[]},
+    {label:'JUL-25',emoji:'📱', images:[]},
+    {label:'JUN-25',emoji:'📸', images:[]},
+    {label:'MAY-25',emoji:'📦', images:[]},
+    {label:'APR-25',emoji:'💳', images:[]},
+    {label:'MAR-25',emoji:'📱', images:[]},
+    {label:'2024',  emoji:'📸', images:[]},
+    {label:'2023',  emoji:'📦', images:[]}
   ];
-  var PROOF_TYPES = [
+
+  var PROOF_PLACEHOLDER = [
     {type:'PAYMENT',city:'New York',  emoji:'💳'},
     {type:'DELIVERY',city:'Miami',    emoji:'📦'},
     {type:'INVOICE', city:'Chicago',  emoji:'📄'},
@@ -605,39 +665,105 @@ var LA = (function () {
     {type:'PAYMENT', city:'Dallas',   emoji:'💳'},
     {type:'DELIVERY',city:'Houston',  emoji:'📦'},
     {type:'INVOICE', city:'Atlanta',  emoji:'📄'},
-    {type:'TRACKING',city:'Seattle',  emoji:'🗂️'},
-    {type:'PAYMENT', city:'Boston',   emoji:'💳'},
-    {type:'DELIVERY',city:'Denver',   emoji:'📦'},
-    {type:'INVOICE', city:'Phoenix',  emoji:'📄'},
-    {type:'TRACKING',city:'Nashville',emoji:'🗂️'}
+    {type:'TRACKING',city:'Seattle',  emoji:'🗂️'}
   ];
+
+  function renderProofGrid(monthData) {
+    var grid = $('proof-grid');
+    if (!grid) return;
+
+    if (monthData.images && monthData.images.length > 0) {
+      var folder = monthData.label.toLowerCase().replace('-', '-');
+      grid.innerHTML = monthData.images.map(function(img, idx) {
+        var url = R2_BASE + '/feb-26/' + encodeURIComponent(img);
+        return '<div class="proof-card proof-card-photo" data-idx="' + idx + '" data-month="' + monthData.label + '">'
+          + '<img src="' + url + '" alt="' + monthData.label + ' proof" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);">'
+          + '<div class="proof-card-overlay"><span class="proof-zoom-icon">🔍</span></div>'
+          + '</div>';
+      }).join('');
+
+      grid.querySelectorAll('.proof-card-photo').forEach(function(card) {
+        card.addEventListener('click', function() {
+          var idx = parseInt(card.getAttribute('data-idx'));
+          openLightbox(monthData.images, idx, 'feb-26');
+        });
+      });
+    } else {
+      grid.innerHTML = PROOF_PLACEHOLDER.map(function(p) {
+        return '<div class="proof-card">'
+          + '<div class="proof-card-img">' + p.emoji + '</div>'
+          + '<div class="proof-card-cap"><div class="pc-type">' + p.type + ' PROOF</div>'
+          + '<div class="pc-city">📍 ' + p.city + '</div></div>'
+          + '</div>';
+      }).join('');
+    }
+  }
+
+  function openLightbox(images, startIdx, folder) {
+    var lb = $('lightbox');
+    var lbImg = $('lightbox-img');
+    if (!lb || !lbImg) return;
+    var current = startIdx;
+
+    function show(i) {
+      current = (i + images.length) % images.length;
+      lbImg.src = R2_BASE + '/' + folder + '/' + encodeURIComponent(images[current]);
+    }
+
+    show(current);
+    lb.classList.add('open');
+    lb.style.display = 'flex';
+
+    var existingPrev = lb.querySelector('.lb-prev');
+    var existingNext = lb.querySelector('.lb-next');
+    if (!existingPrev) {
+      var prev = document.createElement('button');
+      prev.className = 'lb-prev lightbox-nav';
+      prev.innerHTML = '&#8592;';
+      prev.addEventListener('click', function(e) { e.stopPropagation(); show(current - 1); });
+      lb.appendChild(prev);
+    }
+    if (!existingNext) {
+      var next = document.createElement('button');
+      next.className = 'lb-next lightbox-nav';
+      next.innerHTML = '&#8594;';
+      next.addEventListener('click', function(e) { e.stopPropagation(); show(current + 1); });
+      lb.appendChild(next);
+    }
+
+    $('lb-close').onclick = function() {
+      lb.classList.remove('open');
+      lb.style.display = 'none';
+    };
+    lb.onclick = function(e) {
+      if (e.target === lb) { lb.classList.remove('open'); lb.style.display = 'none'; }
+    };
+  }
 
   function initArchive() {
     var tlEl = $('timeline-track');
+    var activeIdx = 3;
     if (tlEl) {
       tlEl.innerHTML = ARCHIVE_MONTHS.map(function(m, i) {
-        return '<div class="tl-item' + (i===0?' active':'') + '" data-idx="' + i + '">'
-          + '<div class="tl-circle">' + m.emoji + '</div>'
+        var hasImages = m.images && m.images.length > 0;
+        return '<div class="tl-item' + (i===activeIdx?' active':'') + '" data-idx="' + i + '">'
+          + '<div class="tl-circle' + (hasImages ? ' tl-has-images' : '') + '">' + m.emoji + '</div>'
           + '<div class="tl-label">' + m.label + '</div>'
+          + (hasImages ? '<div class="tl-count">' + m.images.length + '</div>' : '')
           + '</div>';
       }).join('');
+
       tlEl.addEventListener('click', function(e) {
         var item = e.target.closest('.tl-item');
         if (!item) return;
         $qa('.tl-item').forEach(function(t){ t.classList.remove('active'); });
         item.classList.add('active');
+        var idx = parseInt(item.getAttribute('data-idx'));
+        renderProofGrid(ARCHIVE_MONTHS[idx]);
       });
     }
 
-    var grid = $('proof-grid');
-    if (!grid) return;
-    grid.innerHTML = PROOF_TYPES.map(function(p) {
-      return '<div class="proof-card">'
-        + '<div class="proof-card-img">' + p.emoji + '</div>'
-        + '<div class="proof-card-cap"><div class="pc-type">' + p.type + ' PROOF</div>'
-        + '<div class="pc-city">📍 ' + p.city + '</div></div>'
-        + '</div>';
-    }).join('');
+    renderProofGrid(ARCHIVE_MONTHS[activeIdx]);
   }
 
   /* ── Homepage Init ───────────────────────────────────────── */

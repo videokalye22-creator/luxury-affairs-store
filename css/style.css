@@ -749,9 +749,9 @@ input,button { outline:none; border:none; }
 .proof-card {
   background:var(--card); border:1px solid var(--border);
   border-radius:var(--radius); overflow:hidden;
-  cursor:pointer; transition:border-color var(--t);
+  cursor:pointer; transition:border-color var(--t), transform var(--t);
 }
-.proof-card:hover { border-color:var(--border-g); }
+.proof-card:hover { border-color:var(--border-g); transform:translateY(-2px); }
 .proof-card-img {
   aspect-ratio:9/16; background:var(--card2);
   display:flex; align-items:center; justify-content:center;
@@ -761,6 +761,34 @@ input,button { outline:none; border:none; }
 .proof-card-cap { padding:8px 10px; }
 .proof-card-cap .pc-type { font-size:.65rem; color:var(--gold); letter-spacing:.06em; text-transform:uppercase; }
 .proof-card-cap .pc-city { font-size:.72rem; color:var(--muted); }
+
+/* Photo proof cards (real images) */
+.proof-card-photo {
+  position:relative; aspect-ratio:3/4; border-radius:var(--radius);
+  overflow:hidden; cursor:pointer;
+}
+.proof-card-photo img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s; }
+.proof-card-photo:hover img { transform:scale(1.04); }
+.proof-card-overlay {
+  position:absolute; inset:0;
+  background:rgba(0,0,0,0); display:flex;
+  align-items:center; justify-content:center;
+  transition:background .2s;
+}
+.proof-card-photo:hover .proof-card-overlay { background:rgba(0,0,0,.35); }
+.proof-zoom-icon {
+  font-size:1.6rem; opacity:0; transform:scale(.7);
+  transition:opacity .2s, transform .2s;
+}
+.proof-card-photo:hover .proof-zoom-icon { opacity:1; transform:scale(1); }
+
+/* Timeline enhancements */
+.tl-has-images { border-color:var(--gold) !important; box-shadow:0 0 8px rgba(201,162,39,.35); }
+.tl-count {
+  font-size:.55rem; color:var(--gold); letter-spacing:.04em;
+  background:rgba(201,162,39,.12); border-radius:20px;
+  padding:1px 6px;
+}
 
 /* ============================================================
    REVIEWS PAGE
@@ -982,3 +1010,13 @@ footer {
   position:absolute; top:16px; right:20px;
   background:none; color:#fff; font-size:1.8rem; cursor:pointer;
 }
+.lightbox-nav {
+  position:absolute; top:50%; transform:translateY(-50%);
+  background:rgba(255,255,255,.12); border:none; color:#fff;
+  font-size:1.8rem; width:48px; height:48px; border-radius:50%;
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+  transition:background .2s; z-index:10;
+}
+.lightbox-nav:hover { background:rgba(255,255,255,.25); }
+.lb-prev { left:16px; }
+.lb-next { right:16px; }
