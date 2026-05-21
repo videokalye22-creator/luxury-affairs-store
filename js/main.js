@@ -589,7 +589,7 @@ var LA = (function () {
   }
 
   /* ── Trust Page (archive) ────────────────────────────────── */
-  var R2_BASE = 'https://pub-461f36b5362b494c9d4e4eb82ef799b5.r2.dev';
+  var PROOF_BASE = 'images/proof';
 
   var ARCHIVE_MONTHS = [
     {label:'MAY-26',emoji:'📦', images:[]},
@@ -675,7 +675,7 @@ var LA = (function () {
     if (monthData.images && monthData.images.length > 0) {
       var folder = monthData.label.toLowerCase().replace('-', '-');
       grid.innerHTML = monthData.images.map(function(img, idx) {
-        var url = R2_BASE + '/feb-26/' + encodeURIComponent(img);
+        var url = PROOF_BASE + '/' + folder + '/' + img;
         return '<div class="proof-card proof-card-photo" data-idx="' + idx + '" data-month="' + monthData.label + '">'
           + '<img src="' + url + '" alt="' + monthData.label + ' proof" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);">'
           + '<div class="proof-card-overlay"><span class="proof-zoom-icon">🔍</span></div>'
@@ -707,7 +707,7 @@ var LA = (function () {
 
     function show(i) {
       current = (i + images.length) % images.length;
-      lbImg.src = R2_BASE + '/' + folder + '/' + encodeURIComponent(images[current]);
+      lbImg.src = PROOF_BASE + '/' + folder + '/' + images[current];
     }
 
     show(current);
