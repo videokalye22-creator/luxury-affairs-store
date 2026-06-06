@@ -1,35 +1,8 @@
-name: Deploy to Cloudflare Pages
+# Deployment is handled by Cloudflare Pages direct Git integration.
+# Cloudflare automatically runs `npx wrangler deploy` on every push to main.
+# This file is kept for reference only — the workflow is disabled.
 
-on:
-  push:
-    branches: [main]
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Check secrets are set
-        run: |
-          if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
-            echo "ERROR: CLOUDFLARE_API_TOKEN secret is NOT set"
-            exit 1
-          else
-            echo "OK: CLOUDFLARE_API_TOKEN is set"
-          fi
-          if [ -z "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}" ]; then
-            echo "ERROR: CLOUDFLARE_ACCOUNT_ID secret is NOT set"
-            exit 1
-          else
-            echo "OK: CLOUDFLARE_ACCOUNT_ID is set"
-          fi
-
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy . --project-name=luxury-affairs-store --commit-dirty=true
+# name: Deploy to Cloudflare Pages
+# on:
+#   push:
+#     branches: [main]
