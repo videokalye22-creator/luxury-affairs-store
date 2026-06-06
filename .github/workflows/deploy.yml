@@ -12,6 +12,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Check secrets are set
+        run: |
+          if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
+            echo "ERROR: CLOUDFLARE_API_TOKEN secret is NOT set"
+            exit 1
+          else
+            echo "OK: CLOUDFLARE_API_TOKEN is set"
+          fi
+          if [ -z "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}" ]; then
+            echo "ERROR: CLOUDFLARE_ACCOUNT_ID secret is NOT set"
+            exit 1
+          else
+            echo "OK: CLOUDFLARE_ACCOUNT_ID is set"
+          fi
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
