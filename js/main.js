@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    LUXURY AFFAIRS STORE — main.js
    Single plain script — NO import/export — works on file://
    ============================================================ */
@@ -61,31 +61,110 @@ var LA = (function () {
       { id:'louis-vuitton', label:'LV Bags',         logo:'LV',              style:'' },
       { id:'ysl',      label:'YSL Bags',             logo:'YSL',             style:'' },
       { id:'celine',   label:'Celine Bags',          logo:'CÉLINE',          style:'serif' },
-      { id:'bottega',  label:'Bottega Veneta Bags',  logo:'BOTTEGA\nVENETA', style:'italic' }
+      { id:'bottega',  label:'Bottega Veneta Bags',  logo:'BOTTEGA\nVENETA', style:'italic' },
+      { id:'goyard',   label:'Goyard Bags',          logo:'GOYARD',          style:'serif' },
+      { id:'miumiu',   label:'Miu Miu Bags',         logo:'MIU MIU',         style:'' },
+      { id:'loewe',    label:'Loewe Bags',           logo:'LOEWE',           style:'serif' },
+      { id:'fendi',    label:'Fendi Bags',           logo:'FENDI',           style:'' },
+      { id:'loro-piana',label:'Loro Piana Bags',     logo:'LORO\nPIANA',     style:'italic' },
+      { id:'the-row',  label:'The Row Bags',         logo:'THE ROW',         style:'serif' }
     ],
     footwear: [
       { id:'chanel',    label:'Chanel Shoes',        logo:'CHANEL',    style:'' },
       { id:'hermes',    label:'Hermes Shoes',         logo:'HERMÈS',    style:'serif' },
       { id:'gucci',     label:'Gucci Shoes',          logo:'GUCCI',     style:'' },
-      { id:'dior',      label:'Dior Shoes',           logo:'DIOR',      style:'' },
       { id:'prada',     label:'Prada Shoes',          logo:'PRADA',     style:'' },
+      { id:'dior',      label:'Dior Shoes',           logo:'DIOR',      style:'' },
       { id:'valentino', label:'Valentino Shoes',      logo:'VALENTINO', style:'' },
       { id:'ysl',       label:'YSL Shoes',            logo:'YSL',       style:'' },
       { id:'alaia',     label:'Alaia Shoes',          logo:'ALAÏA',     style:'serif' },
-      { id:'loro-piana',label:'Loro Piana Shoes',     logo:'LORO\nPIANA',style:'italic' }
+      { id:'fendi',     label:'Fendi Shoes',          logo:'FENDI',     style:'' },
+      { id:'celine',    label:'Celine Shoes',         logo:'CÉLINE',    style:'serif' },
+      { id:'loro-piana',label:'Loro Piana Shoes',     logo:'LORO\nPIANA',style:'italic' },
+      { id:'louboutin', label:'Louboutin Shoes',      logo:'LOUBOUTIN', style:'' },
+      { id:'jimmy-choo',label:'Jimmy Choo Shoes',     logo:'JIMMY\nCHOO', style:'italic' },
+      { id:'loewe',     label:'Loewe Shoes',          logo:'LOEWE',     style:'serif' },
+      { id:'miumiu',    label:'Miu Miu Shoes',        logo:'MIU MIU',   style:'' },
+      { id:'rene-caovilla', label:'Rene Caovilla',    logo:'RENÉ\nCAOVILLA', style:'italic' }
     ],
     jewelry: [
-      { id:'cartier',   label:'Cartier Jewelry',     logo:'Cartier',   style:'italic serif' },
-      { id:'chanel',    label:'Chanel Jewelry',      logo:'CHANEL',    style:'' },
-      { id:'gucci',     label:'Gucci Jewelry',       logo:'GUCCI',     style:'' },
-      { id:'bulgari',   label:'BVLGARI Jewelry',     logo:'BVLGARI',   style:'' },
-      { id:'van-cleef', label:'Van Cleef Jewelry',   logo:'VAN CLEEF\n& ARPELS', style:'italic' },
-      { id:'louis-vuitton', label:'LV Jewelry',      logo:'LV',        style:'' },
-      { id:'hermes',    label:'Hermes Jewelry',      logo:'HERMÈS',    style:'serif' },
-      { id:'tiffany',   label:'Tiffany Jewelry',     logo:'TIFFANY\n& CO.', style:'italic' },
-      { id:'chrome-hearts', label:'Chrome Hearts',   logo:'CHROME\nHEARTS', style:'italic' }
+      { id:'cartier',   label:'Cartier Jewelry',     logo:'Cartier',         style:'italic serif' },
+      { id:'van-cleef', label:'Van Cleef & Arpels',  logo:'VAN CLEEF\n& ARPELS', style:'italic' },
+      { id:'hermes',    label:'Hermes Jewelry',       logo:'HERMÈS',          style:'serif' },
+      { id:'chanel',    label:'Chanel Jewelry',       logo:'CHANEL',          style:'' },
+      { id:'tiffany',   label:'Tiffany & Co.',        logo:'TIFFANY\n& CO.',  style:'italic' },
+      { id:'dior',      label:'Dior Jewelry',         logo:'DIOR',            style:'' },
+      { id:'messika',   label:'Messika Jewelry',      logo:'MESSIKA',         style:'' },
+      { id:'graff',     label:'Graff Jewelry',        logo:'GRAFF',           style:'italic serif' },
+      { id:'chaumet',   label:'Chaumet Jewelry',      logo:'Chaumet',         style:'italic serif' },
+      { id:'gucci',     label:'Gucci Jewelry',        logo:'GUCCI',           style:'' },
+      { id:'chopard',   label:'Chopard Jewelry',      logo:'Chopard',         style:'italic serif' },
+      { id:'fendi',     label:'Fendi Jewelry',        logo:'FENDI',           style:'' },
+      { id:'loewe',     label:'Loewe Jewelry',        logo:'LOEWE',           style:'' },
+      { id:'bulgari',   label:'BVLGARI Jewelry',      logo:'BVLGARI',         style:'' },
+      { id:'louis-vuitton', label:'LV Jewelry',       logo:'LV',              style:'' },
+      { id:'chrome-hearts', label:'Chrome Hearts',    logo:'CHROME\nHEARTS',  style:'italic' }
+    ],
+    watches: [
+      { id:'rolex',         label:'Rolex',            logo:'ROLEX',          style:'' },
+      { id:'cartier',       label:'Cartier',          logo:'Cartier',        style:'italic serif' },
+      { id:'omega',         label:'Omega',            logo:'ΩMEGA',          style:'serif' },
+      { id:'chanel',        label:'Chanel',           logo:'CHANEL',         style:'' },
+      { id:'audemars',      label:'Audemars Piguet',  logo:'AP',             style:'' },
+      { id:'patek',         label:'Patek Philippe',   logo:'PATEK\nPHILIPPE',style:'italic' },
+      { id:'richard-mille', label:'Richard Mille',    logo:'RM',             style:'' },
+      { id:'hublot',        label:'Hublot',           logo:'HUBLOT',         style:'' }
+    ],
+    accessories: [
+      { id:'chanel',          label:'Chanel',           logo:'CHANEL',         style:'' },
+      { id:'dior',            label:'Dior',             logo:'DIOR',           style:'' },
+      { id:'gucci',           label:'Gucci',            logo:'GUCCI',          style:'' },
+      { id:'prada',           label:'Prada',            logo:'PRADA',          style:'' },
+      { id:'celine',          label:'Celine',           logo:'CÉLINE',         style:'serif' },
+      { id:'saint-laurent',   label:'Saint Laurent',    logo:'YSL',            style:'' },
+      { id:'balenciaga',      label:'Balenciaga',       logo:'BALENCIAGA',     style:'' },
+      { id:'cartier',         label:'Cartier',          logo:'Cartier',        style:'italic serif' },
+      { id:'miumiu',          label:'Miu Miu',          logo:'miu miu',        style:'italic' },
+      { id:'bottega-veneta',  label:'Bottega Veneta',   logo:'BV',             style:'' },
+      { id:'gentle-monster',  label:'Gentle Monster',   logo:'GENTLE\nMONSTER',style:'' }
     ]
   };
+
+  /* ── Essentials category cards (homepage) ────────────────── */
+  var ESSENTIALS = [
+    { id:'sunglasses',     label:'Sunglasses',          icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="7" cy="14" r="4"/><circle cx="17" cy="14" r="4"/><path d="M11 14h2M3 14h0M21 14h0"/></svg>' },
+    { id:'belts',          label:'Belts',               icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="10" width="16" height="4" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>' },
+    { id:'wallets',        label:'Wallets',             icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M16 13h4"/></svg>' },
+    { id:'winter-clothes', label:'Winter Clothes',      icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 8l4-3 4 3v12H8V8z"/><path d="M6 10l2-2M18 10l-2-2"/></svg>' },
+    { id:'caps-hats',      label:'Caps & Hats',         icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><ellipse cx="12" cy="14" rx="8" ry="3"/><path d="M4 14c0-4 3.5-7 8-7s8 3 8 7"/></svg>' },
+    { id:'scarves',        label:'Scarves',             icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 4c4 2 8 2 12 0v16c-4-2-8-2-12 0V4z"/></svg>' },
+    { id:'mens-clothing',  label:"Men's Clothing",      icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l3 4h5l-2 14H6L4 7h5l3-4z"/></svg>' },
+    { id:'womens-clothing',label:"Women's Clothing",    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l-4 6h3v12h2V9h3l-4-6z"/></svg>' },
+    { id:'matching-sets',  label:'Best Matching Sets',  icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 18l4-10 4 6 4-8 4 12"/><circle cx="8" cy="6" r="2"/></svg>' },
+    { id:'mens-bags',      label:'Mens Bags',           icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M8 8V6a4 4 0 018 0v2"/></svg>' },
+    { id:'pocket-squares', label:'Pocket Squares',      icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 18l6-12 6 12H6z"/></svg>' }
+  ];
+
+  function renderEssentialsGrid(containerId) {
+    var el = $(containerId);
+    if (!el) return;
+    el.className = 'essentials-grid';
+    el.innerHTML = ESSENTIALS.map(function(item) {
+      var href, target;
+      if (item.id === 'sunglasses') {
+        href   = 'accessories.html';
+        target = '_self';
+      } else {
+        var msg = encodeURIComponent('Hi, I am looking for ' + item.label + '. Can you help?');
+        href   = 'https://wa.me/17175385671?text=' + msg;
+        target = '_blank';
+      }
+      return '<a href="' + href + '" target="' + target + '" class="essential-card">'
+        + '<div class="essential-icon">' + item.icon + '</div>'
+        + '<div class="essential-label">' + item.label + '</div>'
+        + '</a>';
+    }).join('');
+  }
 
   /* ── Render Brand Grid ───────────────────────────────────── */
   function renderBrandGrid(category, containerId) {
@@ -98,7 +177,9 @@ var LA = (function () {
       var logoHtml = b.logo.replace(/\n/g, '<br>');
       var styleClass = b.style ? ' ' + b.style : '';
       return '<div class="brand-card" onclick="window.location=\'' + base + '?brand=' + b.id + '\'">'
+        + '<div class="brand-logo-circle">'
         + '<div class="brand-logo-text' + styleClass + '">' + logoHtml + '</div>'
+        + '</div>'
         + '<div class="brand-card-label">' + b.label + '</div>'
         + '</div>';
     }).join('');
@@ -300,42 +381,57 @@ var LA = (function () {
   }
 
   /* ── Happy Clients & Transactions Strips ─────────────────── */
-  var CLIENT_EMOJIS = ['👜','👛','💍','👠','💎','🧣','🕶️','🧤','👒','✨','🛍️','💼'];
-  var TXN_DATA = [
-    { city:'New York',    item:'Chanel Classic Bag',    amount:'$850',  time:'2 min ago'  },
-    { city:'Miami',       item:'LV Neverfull',           amount:'$620',  time:'5 min ago'  },
-    { city:'Los Angeles', item:'Hermès Birkin 25',       amount:'$1,200',time:'8 min ago'  },
-    { city:'Chicago',     item:'Cartier Bracelet',       amount:'$480',  time:'11 min ago' },
-    { city:'Houston',     item:'Gucci GG Marmont',       amount:'$960',  time:'14 min ago' },
-    { city:'Dallas',      item:'Tiffany Diamond Ring',   amount:'$340',  time:'18 min ago' },
-    { city:'Atlanta',     item:'Prada Saffiano Tote',    amount:'$780',  time:'22 min ago' },
-    { city:'Seattle',     item:'Dior Lady Bag',          amount:'$920',  time:'26 min ago' },
-    { city:'Boston',      item:'Valentino Pumps',        amount:'$520',  time:'30 min ago' },
-    { city:'Las Vegas',   item:'Bulgari Watch',          amount:'$1,100',time:'35 min ago' }
-  ];
-
   function initHappyClients() {
     var el = $('clients-track');
     if (!el) return;
-    var items = '';
-    for (var i = 0; i < 16; i++) {
-      var emoji = CLIENT_EMOJIS[i % CLIENT_EMOJIS.length];
-      items += '<div class="client-card">' + emoji + '</div>';
+
+    var clientImages = [
+      'moneycheetah7-20211027-0001-1024x1024.jpg',
+      'moneycheetah7-20211027-0002-1024x1024.jpg',
+      'moneycheetah7-20211027-0003-1024x1024.jpg',
+      'moneycheetah7-20211027-0004-1024x1024.jpg',
+      'moneycheetah7-20211027-0005-819x1024.jpg',
+      'moneycheetah7-20211027-0006-819x1024.jpg',
+      'moneycheetah7-20211027-0007-1024x1024.jpg',
+      'moneycheetah7-20211027-0008-819x1024.jpg'
+    ];
+    var base = 'images/proof/Happy%20Client';
+
+    function makeCard(img, idx) {
+      return '<div class="client-card client-card-img" data-realidx="' + idx + '">'
+        + '<img src="' + base + '/' + img + '" alt="Happy Client" loading="lazy">'
+        + '<div class="client-card-overlay"><span>🔍</span></div>'
+        + '</div>';
     }
-    el.innerHTML = items + items;
+
+    el.innerHTML = clientImages.map(makeCard).join('');
+
+    el.querySelectorAll('.client-card-img').forEach(function(card) {
+      card.addEventListener('click', function() {
+        var idx = parseInt(card.getAttribute('data-realidx'));
+        openLightbox(clientImages, idx, base);
+      });
+    });
   }
 
+  var TXN_PROOF_IMAGES = [
+    'txn-1.webp',
+    'txn-2.webp',
+    'txn-3.webp',
+    'txn-4.webp',
+    'txn-5.webp',
+    'txn-6.webp'
+  ];
+  var TXN_PROOF_BASE = 'images/transactions';
+
   function initTransactions() {
-    var el = $('txn-track');
+    var el = $('txn-grid');
     if (!el) return;
-    var all = TXN_DATA.concat(TXN_DATA);
-    el.innerHTML = all.map(function(t) {
-      return '<div class="txn-card">'
-        + '<div class="txn-icon">📄</div>'
-        + '<div class="txn-amount">' + t.amount + ' — Verified</div>'
-        + '<div class="txn-city">📍 ' + t.city + '</div>'
-        + '<div class="txn-time">⏱ ' + t.time + '</div>'
-        + '</div>';
+    el.innerHTML = TXN_PROOF_IMAGES.map(function(file) {
+      return '<a href="trust.html" class="txn-proof-card">'
+        + '<img src="' + TXN_PROOF_BASE + '/' + file + '" alt="Verified transaction proof" loading="lazy">'
+        + '<div class="txn-proof-overlay"><span>View Vault →</span></div>'
+        + '</a>';
     }).join('');
   }
 
@@ -469,17 +565,43 @@ var LA = (function () {
     }, 4500);
   }
 
+  /* ── Category meta (breadcrumbs + product path) ─────────── */
+  var CATEGORY_META = {
+    handbags:    { page: 'handbags.html',    label: 'BAGS',        path: 'BAGS' },
+    footwear:    { page: 'footwear.html',    label: 'FOOTWEAR',    path: 'FOOTWEAR' },
+    jewelry:     { page: 'jewelry.html',     label: 'JEWELRY',     path: 'JEWELRY' },
+    watches:     { page: 'watches.html',     label: 'WATCHES',     path: 'WATCHES' },
+    accessories: { page: 'accessories.html', label: 'ACCESSORIES', path: 'ACCESSORIES' }
+  };
+
+  function formatBrand(slug) {
+    return slug.replace(/-/g, ' ').replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+  }
+
+  function getBrandLabel(category, brandSlug) {
+    var list = BRANDS[category];
+    if (list) {
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].id === brandSlug) return list[i].label;
+      }
+    }
+    return formatBrand(brandSlug);
+  }
+
   /* ── Product Page Init ───────────────────────────────────── */
   function initProductPage() {
     var p = new URLSearchParams(window.location.search);
     var name   = p.get('name')   || 'Luxury Product';
     var brand  = p.get('brand')  || '';
-    var cat    = p.get('cat')    || '';
+    var cat    = p.get('cat')    || 'handbags';
     var image  = p.get('image')  || 'images/logo.png';
     var images = (p.get('images') || image).split('|').filter(Boolean);
     if (!images.length) images = [image];
     var waText = p.get('wa')     || 'Hi I want ' + name;
     var badge  = p.get('badge')  || '';
+
+    var meta = CATEGORY_META[cat] || CATEGORY_META.handbags;
+    var brandLabel = brand ? getBrandLabel(cat, brand) : '';
 
     // Title
     document.title = name + ' — Luxury Affairs Store';
@@ -489,11 +611,19 @@ var LA = (function () {
     var catEl   = $('prod-cat');
     var bcProd  = $('bc-product');
     var bcBrand = $('bc-brand');
+    var bcCat   = $('bc-category');
 
     if (nameEl)  nameEl.textContent  = name;
-    if (catEl)   catEl.textContent   = (cat.toUpperCase() + ' • ' + brand.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();}) + ' Bags').trim();
-    if (bcProd)  bcProd.textContent  = name.length > 32 ? name.slice(0,32)+'…' : name;
-    if (bcBrand) bcBrand.textContent = brand.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();});
+    if (catEl)   catEl.textContent   = meta.path + (brandLabel ? ' • ' + brandLabel : '');
+    if (bcProd)  bcProd.textContent  = name.length > 32 ? name.slice(0, 32) + '…' : name;
+    if (bcCat) {
+      bcCat.href = meta.page;
+      bcCat.textContent = meta.label;
+    }
+    if (bcBrand) {
+      bcBrand.textContent = brandLabel || 'Brand';
+      bcBrand.href = brand ? meta.page + '?brand=' + encodeURIComponent(brand) : meta.page;
+    }
 
     // Main image
     var mainImg = $('gal-main');
@@ -533,51 +663,72 @@ var LA = (function () {
   function initCollectionPage(category, pageTitle) {
     var urlBrand = new URLSearchParams(window.location.search).get('brand') || 'all';
 
-    // Update breadcrumb brand
-    var bcBrand = $('bc-brand-name');
+    var bcBrand      = $('bc-brand-name');
+    var heading      = $('col-heading');
+    var countEl      = $('col-count');
+    var toolbar      = $q('.col-toolbar');
+    var brandOverview = $('brand-overview');
+    var prodGrid     = $('prod-grid');
+    var pagination   = $('pagination');
+
     if (bcBrand) {
       bcBrand.textContent = urlBrand === 'all'
         ? 'All ' + pageTitle
         : urlBrand.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();}) + ' ' + pageTitle;
     }
 
-    var heading  = $('col-heading');
-    var countEl  = $('col-count');
-
     loadProducts(function(products) {
       var filtered = products.filter(function(p){ return p.category === category; });
       var display  = urlBrand === 'all' ? filtered : filtered.filter(function(p){ return p.brand === urlBrand; });
 
-      // Build brand filter tabs
-      var tabsEl = $('brand-tabs');
-      if (tabsEl) {
-        var brands = ['all'].concat([...new Set(filtered.map(function(p){ return p.brand; }))]);
-        tabsEl.innerHTML = brands.map(function(b) {
-          var label = b === 'all' ? 'All' : b.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();});
-          return '<button class="brand-tab' + (b===urlBrand?' active':'') + '" data-brand="' + b + '">' + label + '</button>';
-        }).join('');
+      if (urlBrand === 'all') {
+        /* ── Brand overview landing view ── */
+        if (toolbar)      toolbar.style.display      = 'none';
+        if (prodGrid)     prodGrid.style.display     = 'none';
+        if (pagination)   pagination.style.display   = 'none';
 
-        tabsEl.addEventListener('click', function(e) {
-          var btn = e.target.closest('.brand-tab');
-          if (!btn) return;
-          var brand = btn.getAttribute('data-brand');
-          $qa('.brand-tab').forEach(function(t){ t.classList.toggle('active', t===btn); });
-          var show = brand === 'all' ? filtered : filtered.filter(function(p){ return p.brand === brand; });
-          if (countEl) countEl.textContent = show.length + ' products';
-          renderProductGrid(show, 'prod-grid', 'pagination', 12);
-        });
+        var catBrands = BRANDS[category] || [];
+        if (heading) {
+          heading.style.fontFamily = 'var(--font-d)';
+          heading.style.fontStyle  = 'italic';
+          heading.style.fontSize   = '2rem';
+          heading.textContent      = pageTitle.toUpperCase();
+        }
+        if (countEl) {
+          countEl.textContent = filtered.length + ' products \u2022 ' + catBrands.length + ' brands';
+        }
+
+        if (brandOverview) {
+          var brandCounts = {};
+          filtered.forEach(function(p) { brandCounts[p.brand] = (brandCounts[p.brand] || 0) + 1; });
+
+          var base = category + '.html';
+          brandOverview.className = 'brand-overview-grid';
+          brandOverview.innerHTML = catBrands.map(function(b) {
+            var logoHtml   = b.logo.replace(/\n/g, '<br>');
+            var styleClass = b.style ? ' ' + b.style : '';
+            var cnt        = brandCounts[b.id] || 0;
+            return '<div class="brand-overview-card" onclick="window.location=\'' + base + '?brand=' + b.id + '\'">'
+              + '<div class="brand-overview-logo">'
+              + '<div class="brand-overview-logo-text' + styleClass + '">' + logoHtml + '</div>'
+              + '</div>'
+              + '<div class="brand-overview-name">' + b.label + '</div>'
+              + (cnt ? '<div class="brand-overview-count">' + cnt + ' products</div>' : '')
+              + '</div>';
+          }).join('');
+        }
+
+      } else {
+        /* ── Brand-specific product view ── */
+        if (brandOverview) brandOverview.style.display = 'none';
+
+        if (heading) heading.textContent = urlBrand.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();}) + ' ' + pageTitle;
+        if (countEl) countEl.textContent = display.length + ' products';
+
+        renderProductGrid(display, 'prod-grid', 'pagination', 12);
       }
-
-      if (heading) heading.textContent = urlBrand === 'all'
-        ? pageTitle
-        : urlBrand.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();}) + ' ' + pageTitle;
-
-      if (countEl) countEl.textContent = display.length + ' products';
-
-      renderProductGrid(display, 'prod-grid', 'pagination', 12);
     });
 
-    // Grid toggle
     $qa('.grid-toggle-btn').forEach(function(btn) {
       btn.addEventListener('click', function() {
         $qa('.grid-toggle-btn').forEach(function(b){ b.classList.remove('active'); });
@@ -591,71 +742,29 @@ var LA = (function () {
   /* ── Trust Page (archive) ────────────────────────────────── */
   var PROOF_BASE = 'images/proof';
 
-  var ARCHIVE_MONTHS = [
-    {label:'MAY-26',emoji:'📦', images:[]},
-    {label:'APR-26',emoji:'💳', images:[]},
-    {label:'MAR-26',emoji:'📱', images:[]},
-    {
-      label:'FEB-26',emoji:'📸',
-      images:[
-        'imgi_100_IMG_9597.webp','imgi_101_IMG_9595.webp','imgi_102_IMG_9580.webp',
-        'imgi_103_IMG_9577.webp','imgi_104_IMG_9578.webp','imgi_105_IMG_9579.webp',
-        'imgi_106_IMG_9576.webp','imgi_107_IMG_9575.webp','imgi_108_IMG_9574.webp',
-        'imgi_109_IMG_9718.webp','imgi_110_IMG_9712.webp','imgi_111_IMG_9716.webp',
-        'imgi_112_IMG_9704.webp','imgi_113_IMG_9593.webp','imgi_114_IMG_9719.webp',
-        'imgi_115_IMG_9714.webp','imgi_116_IMG_9720.webp','imgi_117_IMG_9708.webp',
-        'imgi_118_IMG_9587.webp','imgi_119_IMG_9707.webp','imgi_120_IMG_9717.webp',
-        'imgi_121_IMG_9713.webp','imgi_122_IMG_9711.webp','imgi_123_IMG_9709.webp',
-        'imgi_124_IMG_9715.webp','imgi_125_IMG_9710.webp','imgi_126_IMG_9706.webp',
-        'imgi_127_IMG_9705.webp','imgi_128_IMG_9702.webp','imgi_129_IMG_9588.webp',
-        'imgi_130_IMG_9703.webp','imgi_131_IMG_9589.webp','imgi_132_IMG_9592.webp',
-        'imgi_133_IMG_9591.webp','imgi_134_IMG_9590.webp','imgi_135_IMG-20260128-WA0025.webp',
-        'imgi_136_IMG-20260128-WA0027.webp','imgi_137_IMG-20260128-WA0024.webp',
-        'imgi_16_IMG_9788.webp','imgi_18_IMG_9539.webp','imgi_19_IMG_9081.webp',
-        'imgi_20_IMG_8629.webp','imgi_21_IMG_8093.webp','imgi_22_IMG_7203.webp',
-        'imgi_23_IMG_5879.webp','imgi_24_IMG_6818.webp','imgi_25_IMG-20250808-WA0020.webp',
-        'imgi_26_IMG-20250518-WA0083.webp','imgi_27_IMG-20250701-WA0036.webp',
-        'imgi_28_IMG-20250513-WA0029.webp','imgi_29_IMG-20250917-WA0370.webp',
-        'imgi_30_IMG-20250207-WA0052.webp','imgi_31_reviews(96).webp',
-        'imgi_32_IMG_9790.webp','imgi_33_IMG_9795.webp','imgi_34_IMG_9793.webp',
-        'imgi_35_IMG_9794.webp','imgi_36_IMG_9791.webp','imgi_37_IMG_9792.webp',
-        'imgi_38_IMG_9787.webp','imgi_39_IMG_9789.webp','imgi_40_IMG_9769.webp',
-        'imgi_41_IMG_9767.webp','imgi_42_IMG_9766.webp','imgi_43_IMG_9768.webp',
-        'imgi_44_IMG_9749.webp','imgi_45_IMG_9750.webp','imgi_46_IMG_9747.webp',
-        'imgi_47_IMG_9748.webp','imgi_48_IMG_9746.webp','imgi_49_IMG_9744.webp',
-        'imgi_50_IMG_9745.webp','imgi_51_IMG_9742.webp','imgi_52_IMG_9743.webp',
-        'imgi_53_IMG_9741.webp','imgi_54_IMG_9736.webp','imgi_55_IMG_9737.webp',
-        'imgi_56_IMG_9740.webp','imgi_57_IMG_9738.webp','imgi_58_IMG_9739.webp',
-        'imgi_59_IMG_9735.webp','imgi_60_IMG_9733.webp','imgi_61_IMG_9732.webp',
-        'imgi_62_IMG_9734.webp','imgi_63_IMG_9730.webp','imgi_64_IMG_9731.webp',
-        'imgi_65_IMG_9729.webp','imgi_66_IMG_9728.webp','imgi_67_IMG_9689.webp',
-        'imgi_68_IMG_9683.webp','imgi_69_IMG_9688.webp','imgi_70_IMG_9687.webp',
-        'imgi_71_IMG_9686.webp','imgi_72_IMG_9685.webp','imgi_73_IMG_9682.webp',
-        'imgi_74_IMG_9681.webp','imgi_75_IMG_9677.webp','imgi_76_IMG_9678.webp',
-        'imgi_77_IMG_9680.webp','imgi_78_IMG_9675.webp','imgi_79_IMG_9679.webp',
-        'imgi_80_IMG_9676.webp','imgi_81_IMG_9654.webp','imgi_82_IMG_9653.webp',
-        'imgi_83_IMG_9652.webp','imgi_84_IMG_9648.webp','imgi_85_IMG_9642.webp',
-        'imgi_86_IMG_9647.webp','imgi_87_IMG_9646.webp','imgi_88_IMG_9643.webp',
-        'imgi_89_IMG_9645.webp','imgi_90_IMG_9644.webp','imgi_91_IMG_9600.webp',
-        'imgi_92_IMG_9639.webp','imgi_93_IMG_9641.webp','imgi_94_IMG_9640.webp',
-        'imgi_95_IMG_9638.webp','imgi_96_IMG_9601.webp','imgi_97_IMG_9599.webp',
-        'imgi_98_IMG_9596.webp','imgi_99_IMG_9598.webp'
-      ]
-    },
-    {label:'JAN-26',emoji:'📦', images:[]},
-    {label:'DEC-25',emoji:'💳', images:[]},
-    {label:'NOV-25',emoji:'📱', images:[]},
-    {label:'OCT-25',emoji:'📸', images:[]},
-    {label:'SEP-25',emoji:'📦', images:[]},
-    {label:'AUG-25',emoji:'💳', images:[]},
-    {label:'JUL-25',emoji:'📱', images:[]},
-    {label:'JUN-25',emoji:'📸', images:[]},
-    {label:'MAY-25',emoji:'📦', images:[]},
-    {label:'APR-25',emoji:'💳', images:[]},
-    {label:'MAR-25',emoji:'📱', images:[]},
-    {label:'2024',  emoji:'📸', images:[]},
-    {label:'2023',  emoji:'📦', images:[]}
+  var ARCHIVE_TIMELINE = [
+    {label:'MAY-26',emoji:'📦'},
+    {label:'APR-26',emoji:'💳'},
+    {label:'MAR-26',emoji:'📱'},
+    {label:'FEB-26',emoji:'📸'},
+    {label:'JAN-26',emoji:'📸'},
+    {label:'DEC-25',emoji:'💳'},
+    {label:'NOV-25',emoji:'📱'},
+    {label:'OCT-25',emoji:'📸'},
+    {label:'SEP-25',emoji:'📦'},
+    {label:'AUG-25',emoji:'💳'},
+    {label:'JUL-25',emoji:'📱'},
+    {label:'JUN-25',emoji:'📸'},
+    {label:'MAY-25',emoji:'📦'},
+    {label:'APR-25',emoji:'💳'},
+    {label:'MAR-25',emoji:'📱'},
+    {label:'2024',  emoji:'📸'},
+    {label:'2023',  emoji:'📦'}
   ];
+
+  var ARCHIVE_MONTHS = ARCHIVE_TIMELINE.map(function(t) {
+    return { label:t.label, emoji:t.emoji, images:[] };
+  });
 
   var PROOF_PLACEHOLDER = [
     {type:'PAYMENT',city:'New York',  emoji:'💳'},
@@ -668,14 +777,50 @@ var LA = (function () {
     {type:'TRACKING',city:'Seattle',  emoji:'🗂️'}
   ];
 
+  function proofImageBase(monthData) {
+    var host = window.location.hostname;
+    var isLocal = !host || host === 'localhost' || host === '127.0.0.1';
+    if (isLocal && monthData.localBase) return monthData.localBase;
+    if (monthData.baseUrl) return monthData.baseUrl;
+    if (monthData.localBase) return monthData.localBase;
+    if (monthData.folder) return PROOF_BASE + '/' + monthData.folder;
+    return PROOF_BASE + '/' + monthData.label.toLowerCase();
+  }
+
+  function mergeProofManifest(manifest) {
+    var byLabel = {};
+    if (manifest && manifest.months) {
+      manifest.months.forEach(function(m) { byLabel[m.label] = m; });
+    }
+    return ARCHIVE_TIMELINE.map(function(t) {
+      var m = byLabel[t.label];
+      if (!m) return { label:t.label, emoji:t.emoji, images:[] };
+      return {
+        label: t.label,
+        emoji: m.emoji || t.emoji,
+        folder: m.folder,
+        baseUrl: m.baseUrl,
+        localBase: m.localBase,
+        images: m.images || []
+      };
+    });
+  }
+
+  function defaultArchiveIndex(months) {
+    for (var i = 0; i < months.length; i++) {
+      if (months[i].images && months[i].images.length > 0) return i;
+    }
+    return 3;
+  }
+
   function renderProofGrid(monthData) {
     var grid = $('proof-grid');
     if (!grid) return;
 
     if (monthData.images && monthData.images.length > 0) {
-      var folder = monthData.label.toLowerCase().replace('-', '-');
+      var imgBase = proofImageBase(monthData);
       grid.innerHTML = monthData.images.map(function(img, idx) {
-        var url = PROOF_BASE + '/' + folder + '/' + img;
+        var url = imgBase + '/' + img;
         return '<div class="proof-card proof-card-photo" data-idx="' + idx + '" data-month="' + monthData.label + '">'
           + '<img src="' + url + '" alt="' + monthData.label + ' proof" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);">'
           + '<div class="proof-card-overlay"><span class="proof-zoom-icon">🔍</span></div>'
@@ -685,7 +830,7 @@ var LA = (function () {
       grid.querySelectorAll('.proof-card-photo').forEach(function(card) {
         card.addEventListener('click', function() {
           var idx = parseInt(card.getAttribute('data-idx'));
-          openLightbox(monthData.images, idx, 'feb-26');
+          openLightbox(monthData.images, idx, imgBase);
         });
       });
     } else {
@@ -699,7 +844,7 @@ var LA = (function () {
     }
   }
 
-  function openLightbox(images, startIdx, folder) {
+  function openLightbox(images, startIdx, imgBase) {
     var lb = $('lightbox');
     var lbImg = $('lightbox-img');
     if (!lb || !lbImg) return;
@@ -707,7 +852,7 @@ var LA = (function () {
 
     function show(i) {
       current = (i + images.length) % images.length;
-      lbImg.src = PROOF_BASE + '/' + folder + '/' + images[current];
+      lbImg.src = imgBase + '/' + images[current];
     }
 
     show(current);
@@ -740,11 +885,10 @@ var LA = (function () {
     };
   }
 
-  function initArchive() {
+  function initArchiveUI(months, activeIdx) {
     var tlEl = $('timeline-track');
-    var activeIdx = 3;
     if (tlEl) {
-      tlEl.innerHTML = ARCHIVE_MONTHS.map(function(m, i) {
+      tlEl.innerHTML = months.map(function(m, i) {
         var hasImages = m.images && m.images.length > 0;
         return '<div class="tl-item' + (i===activeIdx?' active':'') + '" data-idx="' + i + '">'
           + '<div class="tl-circle' + (hasImages ? ' tl-has-images' : '') + '">' + m.emoji + '</div>'
@@ -759,18 +903,33 @@ var LA = (function () {
         $qa('.tl-item').forEach(function(t){ t.classList.remove('active'); });
         item.classList.add('active');
         var idx = parseInt(item.getAttribute('data-idx'));
-        renderProofGrid(ARCHIVE_MONTHS[idx]);
+        renderProofGrid(months[idx]);
       });
     }
 
-    renderProofGrid(ARCHIVE_MONTHS[activeIdx]);
+    renderProofGrid(months[activeIdx]);
+  }
+
+  function initArchive() {
+    fetch('data/proof-manifest.json')
+      .then(function(r) { return r.json(); })
+      .then(function(manifest) {
+        var months = mergeProofManifest(manifest);
+        ARCHIVE_MONTHS = months;
+        initArchiveUI(months, defaultArchiveIndex(months));
+      })
+      .catch(function() {
+        initArchiveUI(ARCHIVE_MONTHS, defaultArchiveIndex(ARCHIVE_MONTHS));
+      });
   }
 
   /* ── Homepage Init ───────────────────────────────────────── */
   function initHomepage() {
-    renderBrandGrid('handbags', 'handbags-grid');
-    renderBrandGrid('footwear', 'footwear-grid');
-    renderBrandGrid('jewelry',  'jewelry-grid');
+    renderBrandGrid('handbags',    'handbags-grid');
+    renderBrandGrid('watches',     'watches-grid');
+    renderBrandGrid('footwear',    'footwear-grid');
+    renderBrandGrid('jewelry',     'jewelry-grid');
+    renderEssentialsGrid('essentials-grid');
     initHappyClients();
     initTransactions();
   }
@@ -794,6 +953,10 @@ var LA = (function () {
       initCollectionPage('footwear', 'Footwear');
     } else if (page === 'jewelry.html') {
       initCollectionPage('jewelry', 'Jewelry');
+    } else if (page === 'watches.html') {
+      initCollectionPage('watches', 'Watches');
+    } else if (page === 'accessories.html') {
+      initCollectionPage('accessories', 'Accessories');
     } else if (page === 'product.html') {
       initProductPage();
     } else if (page === 'trust.html') {

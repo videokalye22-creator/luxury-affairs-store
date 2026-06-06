@@ -6,7 +6,7 @@ const TOKEN = process.env.CLOUDFLARE_API_TOKEN || '';
 const ACCOUNT_ID = process.env.CLOUDFLARE_ACCOUNT_ID || '7a509d6d508392cb204c4ed39f5c1471';
 const BUCKET = 'lucxuer';
 const FOLDER = 'feb-26';
-const IMG_DIR = path.join(__dirname, '..', 'data', 'Opale Bags - Premium Products');
+const IMG_DIR = path.join(__dirname, '..', 'images', 'proof', 'feb-26');
 const CONCURRENCY = 10;
 
 function uploadFile(fileName) {

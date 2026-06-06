@@ -1,0 +1,71 @@
+# Cloudflare Pages deploy ignore
+# These are source/build files not needed on the live site
+
+# Brand source CSVs (only data/products.csv is used at runtime)
+data/Rolex.csv
+data/alaia-shoe_products.csv
+data/audemars-piguet-1_products.csv
+data/bv-handbags_products.csv
+data/ca_products.csv
+data/cartie-watch_products.csv
+data/cc-handbags_products.csv
+data/cc-shoe_products.csv
+data/cd-bag_products.csv
+data/cd-shoe_products.csv
+data/cd_products.csv
+data/celin-handbags_products.csv
+data/celin-shoe_products.csv
+data/chane-watch_products.csv
+data/chane_products.csv
+data/chaume_products.csv
+data/chopar_products.csv
+data/christian-louboutin-shoe_products.csv
+data/fend_products.csv
+data/fendi-bag_products.csv
+data/fendi-shoe_products.csv
+data/gg-bag_products.csv
+data/gg-shoe_products.csv
+data/gg_products.csv
+data/goya-handbags_products.csv
+data/gra_products.csv
+data/hm-handbags_products.csv
+data/hm-shoe_products.csv
+data/hm_products.csv
+data/hublot_products.csv
+data/jimmy-choo-shoe_products.csv
+data/loew-shoe_products.csv
+data/loew_products.csv
+data/loewe-bag_products.csv
+data/loro-piana-bag_products.csv
+data/loro-piana-shoes_products.csv
+data/messik_products.csv
+data/mini-bag_products.csv
+data/miumiu-bags_products.csv
+data/miumiu-shoe-2025_products.csv
+data/omega-watch_products.csv
+data/patek-philippe-1_products.csv
+data/prada-shoe_products.csv
+data/rene-caovilla_products.csv
+data/richard-mille_products.csv
+data/richard-mille_products (1).csv
+data/sunglasses_products.csv
+data/the-row-bag_products.csv
+data/tiffan_products.csv
+data/valenti-shoe_products.csv
+data/vca-watch_products.csv
+data/vca_products.csv
+data/ysl-handbags_products.csv
+data/ysl-shoe_products.csv
+data/chanel-processed.csv
+
+# Build / merge scripts
+scripts/
+
+# Cursor IDE files
+.cursor/
+
+# Wrangler local cache
+.wrangler/
+
+# Logs
+*.log
