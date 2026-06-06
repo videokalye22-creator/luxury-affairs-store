@@ -1,8 +1,7 @@
 # Files that should not be uploaded as public static assets
 
-# Worker + deploy config
-worker.js
-wrangler.toml
+# Deploy config
+wrangler.jsonc
 .assetsignore
 .cfignore
 .gitignore

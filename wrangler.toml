@@ -1,8 +1,0 @@
-# Assets Worker: serves static files via worker.js using the ASSETS binding.
-name = "luxury-affairs-store"
-compatibility_date = "2026-01-01"
-main = "worker.js"
-
-[assets]
-directory = "./"
-binding = "ASSETS"
