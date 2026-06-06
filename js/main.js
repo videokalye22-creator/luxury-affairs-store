@@ -35,19 +35,51 @@ var LA = (function () {
     });
   }
 
-  /* ── Load Products ───────────────────────────────────────── */
-  function loadProducts(cb) {
+  /* ── Load Products ───────────────────────────────────────────
+     products.csv is split into per-category files so each stays
+     under Cloudflare's 25 MiB static-asset limit. Large categories
+     are further chunked. Regenerate via scripts/split-products.js. */
+  var CATALOG_FILES = {
+    handbags:    ['data/products-handbags.csv'],
+    footwear:    ['data/products-footwear-1.csv', 'data/products-footwear-2.csv'],
+    jewelry:     ['data/products-jewelry.csv'],
+    watches:     ['data/products-watches.csv'],
+    accessories: ['data/products-accessories.csv']
+  };
+
+  function fetchCSV(url, cb) {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'data/products.csv');
+    xhr.open('GET', url);
     xhr.onload = function() {
-      if (xhr.status === 200 || xhr.status === 0) {
-        cb(parseCSV(xhr.responseText));
-      } else {
-        cb([]);
-      }
+      cb((xhr.status === 200 || xhr.status === 0) ? parseCSV(xhr.responseText) : []);
     };
     xhr.onerror = function() { cb([]); };
     xhr.send();
+  }
+
+  /* loadProducts([category,] cb)
+     - With a category: loads only that category's file(s).
+     - Without one: loads the entire catalog (used by search). */
+  function loadProducts(category, cb) {
+    if (typeof category === 'function') { cb = category; category = null; }
+
+    var files = [];
+    if (category && CATALOG_FILES[category]) {
+      files = CATALOG_FILES[category];
+    } else {
+      Object.keys(CATALOG_FILES).forEach(function(k) { files = files.concat(CATALOG_FILES[k]); });
+    }
+
+    var remaining = files.length;
+    if (!remaining) { cb([]); return; }
+
+    var all = [];
+    files.forEach(function(url) {
+      fetchCSV(url, function(rows) {
+        all = all.concat(rows);
+        if (--remaining === 0) cb(all);
+      });
+    });
   }
 
   /* ── Brand Data ──────────────────────────────────────────── */
@@ -677,7 +709,7 @@ var LA = (function () {
         : urlBrand.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();}) + ' ' + pageTitle;
     }
 
-    loadProducts(function(products) {
+    loadProducts(category, function(products) {
       var filtered = products.filter(function(p){ return p.category === category; });
       var display  = urlBrand === 'all' ? filtered : filtered.filter(function(p){ return p.brand === urlBrand; });
 
