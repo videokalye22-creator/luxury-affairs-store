@@ -36,15 +36,84 @@ var LA = (function () {
   }
 
   /* ── Load Products ───────────────────────────────────────────
-     products.csv is split into per-category files so each stays
-     under Cloudflare's 25 MiB static-asset limit. Large categories
-     are further chunked. Regenerate via scripts/split-products.js. */
+     products.csv is split into one clean file per category+brand so
+     each stays well under Cloudflare's 25 MiB static-asset limit.
+     Regenerate these files + this manifest via scripts/split-products.js. */
   var CATALOG_FILES = {
-    handbags:    ['data/products-handbags.csv'],
-    footwear:    ['data/products-footwear-1.csv', 'data/products-footwear-2.csv'],
-    jewelry:     ['data/products-jewelry.csv'],
-    watches:     ['data/products-watches.csv'],
-    accessories: ['data/products-accessories.csv']
+    handbags: [
+      'data/products-handbags-bottega.csv',
+      'data/products-handbags-celine.csv',
+      'data/products-handbags-chanel.csv',
+      'data/products-handbags-dior.csv',
+      'data/products-handbags-fendi.csv',
+      'data/products-handbags-goyard.csv',
+      'data/products-handbags-gucci.csv',
+      'data/products-handbags-hermes.csv',
+      'data/products-handbags-loewe.csv',
+      'data/products-handbags-loro-piana.csv',
+      'data/products-handbags-louis-vuitton.csv',
+      'data/products-handbags-miumiu.csv',
+      'data/products-handbags-prada.csv',
+      'data/products-handbags-the-row.csv',
+      'data/products-handbags-ysl.csv'
+    ],
+    footwear: [
+      'data/products-footwear-alaia.csv',
+      'data/products-footwear-celine.csv',
+      'data/products-footwear-chanel.csv',
+      'data/products-footwear-dior.csv',
+      'data/products-footwear-fendi.csv',
+      'data/products-footwear-gucci.csv',
+      'data/products-footwear-hermes.csv',
+      'data/products-footwear-jimmy-choo.csv',
+      'data/products-footwear-loewe.csv',
+      'data/products-footwear-loro-piana.csv',
+      'data/products-footwear-louboutin.csv',
+      'data/products-footwear-miumiu.csv',
+      'data/products-footwear-prada.csv',
+      'data/products-footwear-rene-caovilla.csv',
+      'data/products-footwear-valentino.csv',
+      'data/products-footwear-ysl.csv'
+    ],
+    jewelry: [
+      'data/products-jewelry-bulgari.csv',
+      'data/products-jewelry-cartier.csv',
+      'data/products-jewelry-chanel.csv',
+      'data/products-jewelry-chaumet.csv',
+      'data/products-jewelry-chopard.csv',
+      'data/products-jewelry-dior.csv',
+      'data/products-jewelry-fendi.csv',
+      'data/products-jewelry-graff.csv',
+      'data/products-jewelry-gucci.csv',
+      'data/products-jewelry-hermes.csv',
+      'data/products-jewelry-loewe.csv',
+      'data/products-jewelry-messika.csv',
+      'data/products-jewelry-tiffany.csv',
+      'data/products-jewelry-van-cleef.csv'
+    ],
+    watches: [
+      'data/products-watches-audemars.csv',
+      'data/products-watches-cartier.csv',
+      'data/products-watches-chanel.csv',
+      'data/products-watches-hublot.csv',
+      'data/products-watches-omega.csv',
+      'data/products-watches-patek.csv',
+      'data/products-watches-richard-mille.csv',
+      'data/products-watches-rolex.csv'
+    ],
+    accessories: [
+      'data/products-accessories-balenciaga.csv',
+      'data/products-accessories-bottega-veneta.csv',
+      'data/products-accessories-cartier.csv',
+      'data/products-accessories-celine.csv',
+      'data/products-accessories-chanel.csv',
+      'data/products-accessories-dior.csv',
+      'data/products-accessories-gentle-monster.csv',
+      'data/products-accessories-gucci.csv',
+      'data/products-accessories-miumiu.csv',
+      'data/products-accessories-prada.csv',
+      'data/products-accessories-saint-laurent.csv'
+    ]
   };
 
   function fetchCSV(url, cb) {
