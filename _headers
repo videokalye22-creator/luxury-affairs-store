@@ -14,13 +14,13 @@
   Cache-Control: public, max-age=2592000
 
 /css/*
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=300, must-revalidate
 
 /js/*
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=300, must-revalidate
 
 /data/products-*.csv
-  Cache-Control: public, max-age=300
+  Cache-Control: public, max-age=60, must-revalidate
 
 /data/proof-manifest.json
   Cache-Control: public, max-age=300
