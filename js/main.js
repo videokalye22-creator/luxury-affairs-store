@@ -7,6 +7,11 @@ var LA = (function () {
 
   var WA_NUM = '17175385671';
 
+  /* Detect whether the server serves pages with or without .html extension.
+     When .html is absent (e.g. serve / GitHub Pages clean URLs), internal
+     links must omit .html too, otherwise the 301 redirect drops query params. */
+  var _ext = window.location.pathname.match(/\.html$/) ? '.html' : '';
+
   /* ── Utility ─────────────────────────────────────────────── */
   function $(id) { return document.getElementById(id); }
   function $q(sel, ctx) { return (ctx || document).querySelector(sel); }
@@ -39,80 +44,30 @@ var LA = (function () {
      products.csv is split into one clean file per category+brand so
      each stays well under Cloudflare's 25 MiB static-asset limit.
      Regenerate these files + this manifest via scripts/split-products.js. */
+  /* ── CATALOG_FILES ───────────────────────────────────────────
+     One entry per brand CSV file, grouped by category.
+     File format required: name,image,category,brand,images,whatsapp_text,badge
+     Add new brand files here — each one stays a separate file, never merged. */
   var CATALOG_FILES = {
     handbags: [
-      'data/products-handbags-bottega.csv',
-      'data/products-handbags-celine.csv',
-      'data/products-handbags-chanel.csv',
-      'data/products-handbags-dior.csv',
-      'data/products-handbags-fendi.csv',
-      'data/products-handbags-goyard.csv',
-      'data/products-handbags-gucci.csv',
-      'data/products-handbags-hermes.csv',
-      'data/products-handbags-loewe.csv',
-      'data/products-handbags-loro-piana.csv',
-      'data/products-handbags-louis-vuitton.csv',
-      'data/products-handbags-miumiu.csv',
-      'data/products-handbags-prada.csv',
-      'data/products-handbags-the-row.csv',
-      'data/products-handbags-ysl.csv'
+      /* Add handbag brand files here, e.g.:
+         'data/products-handbags-chanel.csv',
+         'data/products-handbags-hermes.csv',  */
     ],
     footwear: [
-      'data/products-footwear-alaia.csv',
-      'data/products-footwear-celine.csv',
-      'data/products-footwear-chanel.csv',
-      'data/products-footwear-dior.csv',
-      'data/products-footwear-fendi.csv',
-      'data/products-footwear-gucci.csv',
-      'data/products-footwear-hermes.csv',
-      'data/products-footwear-jimmy-choo.csv',
-      'data/products-footwear-loewe.csv',
-      'data/products-footwear-loro-piana.csv',
-      'data/products-footwear-louboutin.csv',
-      'data/products-footwear-miumiu.csv',
-      'data/products-footwear-prada.csv',
-      'data/products-footwear-rene-caovilla.csv',
-      'data/products-footwear-valentino.csv',
-      'data/products-footwear-ysl.csv'
+      /* Add footwear brand files here, e.g.:
+         'data/products-footwear-chanel.csv',  */
     ],
     jewelry: [
-      'data/products-jewelry-bulgari.csv',
-      'data/products-jewelry-cartier.csv',
-      'data/products-jewelry-chanel.csv',
-      'data/products-jewelry-chaumet.csv',
-      'data/products-jewelry-chopard.csv',
-      'data/products-jewelry-dior.csv',
-      'data/products-jewelry-fendi.csv',
-      'data/products-jewelry-graff.csv',
-      'data/products-jewelry-gucci.csv',
-      'data/products-jewelry-hermes.csv',
-      'data/products-jewelry-loewe.csv',
-      'data/products-jewelry-messika.csv',
-      'data/products-jewelry-tiffany.csv',
-      'data/products-jewelry-van-cleef.csv'
+      /* Add jewelry brand files here, e.g.:
+         'data/products-jewelry-cartier.csv',  */
     ],
     watches: [
-      'data/products-watches-audemars.csv',
-      'data/products-watches-cartier.csv',
-      'data/products-watches-chanel.csv',
-      'data/products-watches-hublot.csv',
-      'data/products-watches-omega.csv',
-      'data/products-watches-patek.csv',
-      'data/products-watches-richard-mille.csv',
       'data/products-watches-rolex.csv'
     ],
     accessories: [
-      'data/products-accessories-balenciaga.csv',
-      'data/products-accessories-bottega-veneta.csv',
-      'data/products-accessories-cartier.csv',
-      'data/products-accessories-celine.csv',
-      'data/products-accessories-chanel.csv',
-      'data/products-accessories-dior.csv',
-      'data/products-accessories-gentle-monster.csv',
-      'data/products-accessories-gucci.csv',
-      'data/products-accessories-miumiu.csv',
-      'data/products-accessories-prada.csv',
-      'data/products-accessories-saint-laurent.csv'
+      /* Add accessories brand files here, e.g.:
+         'data/products-accessories-gucci.csv', */
     ]
   };
 
@@ -253,7 +208,7 @@ var LA = (function () {
     el.innerHTML = ESSENTIALS.map(function(item) {
       var href, target;
       if (item.id === 'sunglasses') {
-        href   = 'accessories.html';
+        href   = 'accessories' + _ext;
         target = '_self';
       } else {
         var msg = encodeURIComponent('Hi, I am looking for ' + item.label + '. Can you help?');
@@ -325,8 +280,8 @@ var LA = (function () {
         wa:     p.whatsapp_text,
         badge:  p.badge || ''
       });
-      return '<div class="prod-card" onclick="window.location=\'product.html?' + params.toString() + '\'">'
-        + '<div class="prod-card-img"><img src="' + p.image + '" alt="' + p.name + '" loading="lazy" onerror="this.src=\'images/logo.png\'"></div>'
+      return '<div class="prod-card" onclick="window.location=\'product' + _ext + '?' + params.toString() + '\'">'
+        + '<div class="prod-card-img"><img src="' + p.image + '" alt="' + p.name + '" loading="lazy" onerror="this.onerror=null;this.style.opacity=\'0\'"></div>'
         + '<div class="prod-card-name">' + p.name + '</div>'
         + '</div>';
     }).join('');
@@ -466,7 +421,7 @@ var LA = (function () {
           }).slice(0, 8);
           resultsWrap.innerHTML = hits.map(function(p) {
             var params = new URLSearchParams({ name:p.name, brand:p.brand, image:p.image, images:p.images, cat:p.category, wa:p.whatsapp_text });
-            return '<div class="search-result-item" onclick="window.location=\'product.html?' + params.toString() + '\'">'
+            return '<div class="search-result-item" onclick="window.location=\'product' + _ext + '?' + params.toString() + '\'">'
               + '<img src="' + p.image + '" alt="' + p.name + '" onerror="this.style.display=\'none\'">'
               + '<span>' + p.name + '</span>'
               + '</div>';
@@ -529,7 +484,7 @@ var LA = (function () {
     var el = $('txn-grid');
     if (!el) return;
     el.innerHTML = TXN_PROOF_IMAGES.map(function(file) {
-      return '<a href="trust.html" class="txn-proof-card">'
+      return '<a href="trust' + _ext + '" class="txn-proof-card">'
         + '<img src="' + TXN_PROOF_BASE + '/' + file + '" alt="Verified transaction proof" loading="lazy">'
         + '<div class="txn-proof-overlay"><span>View Vault →</span></div>'
         + '</a>';
@@ -668,11 +623,11 @@ var LA = (function () {
 
   /* ── Category meta (breadcrumbs + product path) ─────────── */
   var CATEGORY_META = {
-    handbags:    { page: 'handbags.html',    label: 'BAGS',        path: 'BAGS' },
-    footwear:    { page: 'footwear.html',    label: 'FOOTWEAR',    path: 'FOOTWEAR' },
-    jewelry:     { page: 'jewelry.html',     label: 'JEWELRY',     path: 'JEWELRY' },
-    watches:     { page: 'watches.html',     label: 'WATCHES',     path: 'WATCHES' },
-    accessories: { page: 'accessories.html', label: 'ACCESSORIES', path: 'ACCESSORIES' }
+    handbags:    { page: 'handbags'    + _ext, label: 'BAGS',        path: 'BAGS' },
+    footwear:    { page: 'footwear'    + _ext, label: 'FOOTWEAR',    path: 'FOOTWEAR' },
+    jewelry:     { page: 'jewelry'     + _ext, label: 'JEWELRY',     path: 'JEWELRY' },
+    watches:     { page: 'watches'     + _ext, label: 'WATCHES',     path: 'WATCHES' },
+    accessories: { page: 'accessories' + _ext, label: 'ACCESSORIES', path: 'ACCESSORIES' }
   };
 
   function formatBrand(slug) {
@@ -695,7 +650,7 @@ var LA = (function () {
     var name   = p.get('name')   || 'Luxury Product';
     var brand  = p.get('brand')  || '';
     var cat    = p.get('cat')    || 'handbags';
-    var image  = p.get('image')  || 'images/logo.png';
+    var image  = p.get('image')  || '';
     var images = (p.get('images') || image).split('|').filter(Boolean);
     if (!images.length) images = [image];
     var waText = p.get('wa')     || 'Hi I want ' + name;
@@ -803,7 +758,7 @@ var LA = (function () {
           var brandCounts = {};
           filtered.forEach(function(p) { brandCounts[p.brand] = (brandCounts[p.brand] || 0) + 1; });
 
-          var base = category + '.html';
+          var base = category + _ext;
           brandOverview.className = 'brand-overview-grid';
           brandOverview.innerHTML = catBrands.map(function(b) {
             var logoHtml   = b.logo.replace(/\n/g, '<br>');
@@ -1044,23 +999,23 @@ var LA = (function () {
     initFAQ();
     initPopup();
 
-    var page = window.location.pathname.split('/').pop() || 'index.html';
+    var page = window.location.pathname.split('/').pop().replace(/\.html$/, '') || 'index';
 
-    if (page === 'index.html' || page === '') {
+    if (page === 'index' || page === '') {
       initHomepage();
-    } else if (page === 'handbags.html') {
+    } else if (page === 'handbags') {
       initCollectionPage('handbags', 'Handbags');
-    } else if (page === 'footwear.html') {
+    } else if (page === 'footwear') {
       initCollectionPage('footwear', 'Footwear');
-    } else if (page === 'jewelry.html') {
+    } else if (page === 'jewelry') {
       initCollectionPage('jewelry', 'Jewelry');
-    } else if (page === 'watches.html') {
+    } else if (page === 'watches') {
       initCollectionPage('watches', 'Watches');
-    } else if (page === 'accessories.html') {
+    } else if (page === 'accessories') {
       initCollectionPage('accessories', 'Accessories');
-    } else if (page === 'product.html') {
+    } else if (page === 'product') {
       initProductPage();
-    } else if (page === 'trust.html') {
+    } else if (page === 'trust') {
       initArchive();
     }
   }

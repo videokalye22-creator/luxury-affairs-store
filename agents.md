@@ -260,14 +260,22 @@ Below the fold (full width):
 
 ## Data System
 
-### CSV Format (data/products.csv)
+### CSV Format (per-brand files in data/)
 ```
 name,image,category,brand,images,whatsapp_text,badge
 ```
 
-- images field: pipe-separated URLs
-- badge field: "New" | "Hot" | "" (empty)
-- All rendering dynamic from CSV — nothing hardcoded in HTML
+- `image`: main product image URL — must be a publicly accessible URL (e.g. Shopify CDN `https://cdn.shopify.com/...`)
+- `images`: pipe-separated list of all gallery image URLs (same source)
+- `badge`: "New" | "Hot" | "" (empty)
+- Files are named: `data/products-{category}-{brand}.csv`
+- All rendering is dynamic from CSV — nothing hardcoded in HTML
+
+### Image Hosting Rules
+- Use image URLs directly as they appear in the source (Shopify CDN, etc.) — do NOT re-upload to R2 or any other bucket
+- Before adding a CSV file, verify at least one image URL loads (paste it in a browser tab — it must return 200, not 404/500)
+- Shopify CDN images become inaccessible if the source store is closed or images are deleted — always confirm the store is still active
+- Do NOT use `images/logo.png` as an image fallback for products — failed images silently hide (opacity 0)
 
 ### Brand Card Data (hardcoded in main.js)
 Brand logo cards on homepage and collection brand grids are hardcoded in JS (not from CSV) as they are static brand identity, not products.
