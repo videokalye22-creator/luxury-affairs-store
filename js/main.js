@@ -50,7 +50,9 @@ var LA = (function () {
      Add new brand files here — each one stays a separate file, never merged. */
   var CATALOG_FILES = {
     handbags: [
-      'data/products-handbags-chanel.csv'
+      /* Add handbag brand files here, e.g.:
+         'data/products-handbags-chanel.csv',
+         'data/products-handbags-hermes.csv',  */
     ],
     footwear: [
       /* Add footwear brand files here, e.g.:
