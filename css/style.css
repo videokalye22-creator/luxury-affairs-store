@@ -93,6 +93,42 @@ input,button { outline:none; border:none; }
 }
 .nav-icon-btn:hover { color:var(--gold); }
 
+/* Desktop: OpaleBags-style centered header rail */
+@media (min-width:900px) {
+  .navbar {
+    height:56px;
+    padding-left:max(16px, calc((100% - 640px) / 2));
+    padding-right:max(16px, calc((100% - 640px) / 2));
+  }
+  .nav-ham {
+    width:36px; height:36px; padding:0;
+    align-items:center; justify-content:center; gap:4px;
+    border:1px solid var(--border); border-radius:2px;
+  }
+  .nav-ham span { width:20px; height:2px; }
+  .nav-logo { font-size:18px; margin-left:10px; }
+  .nav-right { gap:8px; }
+  .nav-icon-btn {
+    position:relative; width:36px; height:36px; padding:0;
+    border:1px solid var(--border); border-radius:2px;
+    font-size:0;
+  }
+  .nav-icon-btn::before {
+    content:''; position:absolute; width:12px; height:12px;
+    left:10px; top:9px; border:2px solid var(--white); border-radius:50%;
+  }
+  .nav-icon-btn::after {
+    content:''; position:absolute; width:8px; height:2px;
+    left:21px; top:23px; background:var(--white); transform:rotate(45deg);
+  }
+  .theme-tog {
+    width:36px; height:36px; justify-content:center;
+    border:1px solid var(--border); border-radius:2px;
+  }
+  .theme-icon { font-size:1.1rem; line-height:1; }
+  .tog-wrap { display:none; }
+}
+
 /* Theme toggle */
 .theme-tog {
   display:flex; align-items:center; gap:6px; cursor:pointer;
@@ -188,6 +224,7 @@ input,button { outline:none; border:none; }
    TICKER
    ============================================================ */
 .ticker {
+  position:fixed; top:56px; left:0; right:0; z-index:899;
   background: #0a0a0a;
   border-bottom:1px solid var(--border);
   overflow:hidden; height:36px; display:flex; align-items:center;
@@ -196,25 +233,52 @@ input,button { outline:none; border:none; }
 .ticker:hover { background:#111; }
 a.ticker { display:flex; }
 .ticker-track {
-  display:flex; gap:0; white-space:nowrap;
-  animation: ticker-run 28s linear infinite;
+  display:flex; gap:0; width:600vw;
+  animation:ticker-run-mobile 60s linear infinite;
 }
 .ticker-item {
-  display:inline-flex; align-items:center; gap:10px;
-  padding:0 28px; font-size:.72rem; font-weight:600;
+  display:inline-flex; flex:0 0 100vw;
+  align-items:center; justify-content:center; gap:10px;
+  padding:0 16px; font-size:.72rem; font-weight:600;
   letter-spacing:.1em; text-transform:uppercase; color:var(--gold);
-  font-family:var(--font-ui);
+  font-family:var(--font-ui); text-align:center; white-space:normal;
 }
 .ticker-sep { color:rgba(201,162,39,.4); }
-@keyframes ticker-run {
+@keyframes ticker-run-mobile {
   from { transform:translateX(0); }
-  to   { transform:translateX(-50%); }
+  to   { transform:translateX(-300vw); }
 }
 
 /* ============================================================
    PAGE WRAPPER (push below fixed navbar + ticker)
    ============================================================ */
 .page-top { padding-top:92px; } /* 56px navbar + 36px ticker */
+
+@media (min-width:900px) {
+  .ticker {
+    top:56px; height:56px;
+    background:var(--bg);
+  }
+  .ticker:hover { background:var(--card); }
+  .ticker-item {
+    flex-basis:33.333333vw;
+    gap:8px; padding:0 18px;
+    color:var(--muted); font-size:14px;
+    font-weight:600; letter-spacing:.02em; line-height:1.15;
+  }
+  .ticker-track {
+    width:200vw;
+    animation-name:ticker-run-desktop;
+    animation-duration:50s;
+  }
+  .ticker-dot { color:var(--gold); font-size:.65rem; }
+  .page-top { padding-top:112px; }
+}
+
+@keyframes ticker-run-desktop {
+  from { transform:translateX(0); }
+  to   { transform:translateX(-100vw); }
+}
 
 /* ============================================================
    HOMEPAGE — PROFILE HERO
@@ -406,6 +470,7 @@ a.ticker { display:flex; }
 }
 .section-video {
   width: 100%;
+  aspect-ratio: 16 / 9;
   max-height: 300px;
   object-fit: cover;
   border-radius: var(--radius);
@@ -419,7 +484,7 @@ a.ticker { display:flex; }
   border-right: none;
   border-top: none;
   border-bottom: none;
-  max-height: 280px;
+  max-height: none;
 }
 .section-video-title {
   position: absolute;
@@ -440,8 +505,8 @@ a.ticker { display:flex; }
 @media (min-width: 900px) {
   .section-video-wrap { padding: 0 5% 20px; }
   .section-video-wrap.section-divider { padding: 0; }
-  .section-video { max-height: 380px; }
-  .section-divider .section-video { max-height: 320px; }
+  .section-video { max-height: 640px; }
+  .section-divider .section-video { max-height: 640px; }
   .section-video-title { font-size: 2rem; bottom: 36px; left: 40px; }
   .section-divider .section-video-title { left: 5%; }
 }
@@ -705,7 +770,7 @@ a.ticker { display:flex; }
   background:var(--card); aspect-ratio:1/1;
 }
 .gallery-main-wrap img {
-  width:100%; height:100%; object-fit:cover;
+  width:100%; height:100%; object-fit:contain;
   transition:opacity .2s;
 }
 .gallery-arrow {
@@ -739,10 +804,10 @@ a.ticker { display:flex; }
 .g-thumb {
   min-width:58px; height:58px; border-radius:6px; overflow:hidden;
   border:2px solid transparent; cursor:pointer; flex-shrink:0;
-  transition:border-color var(--t);
+  background:var(--card); transition:border-color var(--t);
 }
 .g-thumb.active, .g-thumb:hover { border-color:var(--gold); }
-.g-thumb img { width:100%; height:100%; object-fit:cover; }
+.g-thumb img { width:100%; height:100%; object-fit:contain; }
 
 /* Product info */
 .prod-info { display:flex; flex-direction:column; gap:12px; }
@@ -1208,6 +1273,8 @@ footer {
 }
 @media (min-width:900px) {
   .brand-grid  { gap:12px; }
+  #handbags-grid { grid-template-columns:repeat(3,1fr); }
+  #handbags-grid .brand-card:nth-child(n+10) { display:none; }
   .prod-grid   { grid-template-columns:repeat(3,1fr); }
   .prod-grid.cols4 { grid-template-columns:repeat(4,1fr); }
   .proof-grid  { grid-template-columns:repeat(4,1fr); }

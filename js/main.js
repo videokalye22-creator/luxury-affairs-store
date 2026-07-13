@@ -39,6 +39,9 @@ var LA = (function () {
      products.csv is split into one clean file per category+brand so
      each stays well under Cloudflare's 25 MiB static-asset limit.
      Regenerate these files + this manifest via scripts/split-products.js. */
+  /* Catalog reset in progress: only Rolex watches are live while the rest
+     of the collection is being rebuilt. Re-add file paths here as each
+     category/brand CSV is restocked. */
   var CATALOG_FILES = {
     handbags: [
       'data/products-handbags-bottega.csv',
@@ -51,69 +54,17 @@ var LA = (function () {
       'data/products-handbags-hermes.csv',
       'data/products-handbags-loewe.csv',
       'data/products-handbags-loro-piana.csv',
-      'data/products-handbags-louis-vuitton.csv',
       'data/products-handbags-miumiu.csv',
       'data/products-handbags-prada.csv',
       'data/products-handbags-the-row.csv',
       'data/products-handbags-ysl.csv'
     ],
-    footwear: [
-      'data/products-footwear-alaia.csv',
-      'data/products-footwear-celine.csv',
-      'data/products-footwear-chanel.csv',
-      'data/products-footwear-dior.csv',
-      'data/products-footwear-fendi.csv',
-      'data/products-footwear-gucci.csv',
-      'data/products-footwear-hermes.csv',
-      'data/products-footwear-jimmy-choo.csv',
-      'data/products-footwear-loewe.csv',
-      'data/products-footwear-loro-piana.csv',
-      'data/products-footwear-louboutin.csv',
-      'data/products-footwear-miumiu.csv',
-      'data/products-footwear-prada.csv',
-      'data/products-footwear-rene-caovilla.csv',
-      'data/products-footwear-valentino.csv',
-      'data/products-footwear-ysl.csv'
-    ],
-    jewelry: [
-      'data/products-jewelry-bulgari.csv',
-      'data/products-jewelry-cartier.csv',
-      'data/products-jewelry-chanel.csv',
-      'data/products-jewelry-chaumet.csv',
-      'data/products-jewelry-chopard.csv',
-      'data/products-jewelry-dior.csv',
-      'data/products-jewelry-fendi.csv',
-      'data/products-jewelry-graff.csv',
-      'data/products-jewelry-gucci.csv',
-      'data/products-jewelry-hermes.csv',
-      'data/products-jewelry-loewe.csv',
-      'data/products-jewelry-messika.csv',
-      'data/products-jewelry-tiffany.csv',
-      'data/products-jewelry-van-cleef.csv'
-    ],
+    footwear: [],
+    jewelry: [],
     watches: [
-      'data/products-watches-audemars.csv',
-      'data/products-watches-cartier.csv',
-      'data/products-watches-chanel.csv',
-      'data/products-watches-hublot.csv',
-      'data/products-watches-omega.csv',
-      'data/products-watches-patek.csv',
-      'data/products-watches-richard-mille.csv',
       'data/products-watches-rolex.csv'
     ],
-    accessories: [
-      'data/products-accessories-balenciaga.csv',
-      'data/products-accessories-bottega-veneta.csv',
-      'data/products-accessories-cartier.csv',
-      'data/products-accessories-celine.csv',
-      'data/products-accessories-chanel.csv',
-      'data/products-accessories-dior.csv',
-      'data/products-accessories-gentle-monster.csv',
-      'data/products-accessories-gucci.csv',
-      'data/products-accessories-miumiu.csv',
-      'data/products-accessories-prada.csv',
-      'data/products-accessories-saint-laurent.csv'
-    ]
+    accessories: []
   };
 
   function fetchCSV(url, cb) {
@@ -478,7 +429,17 @@ var LA = (function () {
 
   /* ── Ticker ──────────────────────────────────────────────── */
   function initTicker() {
-    $qa('.ticker-track').forEach(function(t) { t.innerHTML += t.innerHTML; });
+    var messages = [
+      'EST. 2020 | 50,000+ SUCCESSFUL DELIVERIES GLOBALLY',
+      'DIRECT FACTORY ACCESS (DUBAI) | 3–4 DAY EXPRESS SHIPPING',
+      'CLICK TO VIEW THE VAULT: PAYMENT & DELIVERY PROOFS (2020–2026)'
+    ];
+    var set = messages.map(function(message) {
+      return '<span class="ticker-item"><span class="ticker-dot">◆</span>' + message + '</span>';
+    }).join('');
+    $qa('.ticker-track').forEach(function(track) {
+      track.innerHTML = set + set;
+    });
   }
 
   /* ── Happy Clients & Transactions Strips ─────────────────── */
