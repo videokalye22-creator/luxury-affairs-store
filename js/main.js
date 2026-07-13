@@ -12,6 +12,12 @@ var LA = (function () {
   function $q(sel, ctx) { return (ctx || document).querySelector(sel); }
   function $qa(sel, ctx) { return (ctx || document).querySelectorAll(sel); }
 
+  function currentPageName() {
+    var page = window.location.pathname.split('/').pop();
+    if (!page) return 'index.html';
+    return page.indexOf('.') === -1 ? page + '.html' : page;
+  }
+
   function waURL(text) {
     return 'https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent(text);
   }
@@ -223,7 +229,7 @@ var LA = (function () {
     var el = $(containerId);
     if (!el) return;
     var brands = BRANDS[category] || [];
-    var page = window.location.pathname.split('/').pop() || 'index.html';
+    var page = currentPageName();
     var base = category + '.html';
     el.innerHTML = brands.map(function(b) {
       var logoHtml = b.logo.replace(/\n/g, '<br>');
@@ -384,7 +390,7 @@ var LA = (function () {
     }
 
     // Active link
-    var page = window.location.pathname.split('/').pop() || 'index.html';
+    var page = currentPageName();
     $qa('.nav-drawer a').forEach(function(a) {
       var href = a.getAttribute('href');
       if (href === page || (page === '' && href === 'index.html')) a.classList.add('active');
@@ -1005,7 +1011,7 @@ var LA = (function () {
     initFAQ();
     initPopup();
 
-    var page = window.location.pathname.split('/').pop() || 'index.html';
+    var page = currentPageName();
 
     if (page === 'index.html' || page === '') {
       initHomepage();
