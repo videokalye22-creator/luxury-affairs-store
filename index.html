@@ -1,246 +1,490 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Luxury Affairs Store — The World's Finest Private Luxury Collection. Authentic Chanel, Hermès, Dior & more via WhatsApp.">
-  <title>Luxury Affairs Store — Premium Designer Pieces</title>
-  <link rel="icon" type="image/png" href="images/logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260608-2">
-</head>
-<body>
-
-<!-- ══ NAVBAR ══════════════════════════════════════════════ -->
-<nav class="navbar">
-  <button class="nav-ham" id="nav-ham" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <a href="index.html" class="nav-logo">
-    <span class="brand-w">LUXURY </span><span class="brand-g">AFFAIRS</span><span class="brand-w"> STORE</span>
-  </a>
-  <div class="nav-right">
-    <button class="nav-icon-btn" id="nav-search-btn" aria-label="Search">🔍</button>
-    <label class="theme-tog" title="Toggle theme">
-      <span class="theme-icon">🌙</span>
-      <div class="tog-wrap">
-        <input type="checkbox" id="theme-input">
-        <span class="tog-track"></span>
-        <span class="tog-thumb"></span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Luxury Affairs — a private sourcing house for the world's most coveted pieces. Handbags, timepieces, jewelry & footwear, by appointment via WhatsApp."
+    />
+    <title>Luxury Affairs — The Quiet Art of Acquisition</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css?v=20260719" />
+  </head>
+  <body>
+    <!-- ══ INTRO CURTAIN ═══════════════════════════════════════ -->
+    <div class="intro" id="intro">
+      <div class="intro-mark">
+        <span class="brand-w">LUXURY</span> <span class="brand-g">AFFAIRS</span>
       </div>
-    </label>
-  </div>
-</nav>
+      <div class="intro-sub"><span>The Quiet Art of Acquisition</span></div>
+      <div class="intro-bar"></div>
+      <div class="intro-count" id="intro-count">00</div>
+    </div>
 
-<!-- Nav Drawer -->
-<div class="nav-drawer-overlay" id="nav-overlay"></div>
-<div class="nav-drawer" id="nav-drawer">
-  <button class="drawer-close" id="drawer-close">✕</button>
-  <a href="index.html" class="active">Home</a>
-  <a href="handbags.html">Handbags</a>
-  <a href="footwear.html">Footwear</a>
-  <a href="jewelry.html">Jewelry</a>
-  <a href="watches.html">Watches</a>
-  <a href="accessories.html">Accessories</a>
-  <a href="trust.html">Trust & Proof</a>
-  <a href="reviews.html">Video Reviews</a>
-</div>
-
-<!-- Search Overlay -->
-<div class="search-overlay" id="search-overlay">
-  <div class="search-overlay-inner">
-    <input type="text" id="search-input" placeholder="Search bags, shoes, jewelry…">
-    <button class="search-overlay-btn">🔍</button>
-  </div>
-  <div class="search-results" id="search-results"></div>
-  <button class="search-close" id="search-close-btn">✕ Close</button>
-</div>
-
-<!-- ══ TICKER (clickable → trust page) ═════════════════════ -->
-<a href="trust.html" class="ticker">
-  <div class="ticker-track">
-    <span class="ticker-item">📁 CLICK TO VIEW THE VAULT: PAYMENT &amp; DELIVERY PROOFS (2020–2026)</span>
-    <span class="ticker-item ticker-sep">◆</span>
-    <span class="ticker-item">🏆 EST. 2020 | 50,000+ SUCCESSFUL DELIVERIES GLOBALLY</span>
-    <span class="ticker-item ticker-sep">◆</span>
-    <span class="ticker-item">⚡ WHATSAPP-DIRECT | 3–4 DAY EXPRESS SHIPPING</span>
-    <span class="ticker-item ticker-sep">◆</span>
-    <span class="ticker-item">✅ 100% AUTHENTIC — VERIFIED EVERY ORDER</span>
-    <span class="ticker-item ticker-sep">◆</span>
-    
-  </div>
-</a>
-
-<!-- ══ PAGE CONTENT ════════════════════════════════════════ -->
-<main class="page-top">
-
-  <!-- ── Profile Hero ─────────────────────────────────────── -->
-  <div class="profile-hero">
-    <img src="images/logo.png" alt="Luxury Affairs Store" class="profile-logo">
-    <div class="profile-name">Luxury Affairs Store</div>
-    <div class="profile-tagline">The World's Finest Private Luxury Collection.</div>
-    <p class="profile-desc">Established 2020. We are a premier sourcing service for 50,000+ clients. We don't sell "products" we sell access.</p>
-    <div class="profile-socials">
-      <a href="https://instagram.com" target="_blank" class="social-btn" title="Instagram" style="background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);border-color:transparent;color:#fff;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    <!-- ══ NAVBAR ══════════════════════════════════════════════ -->
+    <nav class="navbar">
+      <button class="nav-ham" id="nav-ham" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="index.html" class="nav-logo">
+        <span class="brand-w">LUXURY</span> <span class="brand-g">AFFAIRS</span>
       </a>
-      <a href="https://wa.me/17175385671" target="_blank" class="social-btn" title="WhatsApp" style="background:#25d366;border-color:#25d366;color:#fff;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      <div class="nav-right">
+        <button class="nav-icon-btn" id="nav-search-btn" aria-label="Search">
+          🔍
+        </button>
+        <label class="theme-tog" title="Toggle theme">
+          <span class="theme-icon">🌙</span>
+          <div class="tog-wrap">
+            <input type="checkbox" id="theme-input" />
+            <span class="tog-track"></span>
+            <span class="tog-thumb"></span>
+          </div>
+        </label>
+      </div>
+    </nav>
+
+    <!-- Nav Drawer -->
+    <div class="nav-drawer-overlay" id="nav-overlay"></div>
+    <div class="nav-drawer" id="nav-drawer">
+      <button class="drawer-close" id="drawer-close">✕</button>
+      <a href="index.html" class="active">Home</a>
+      <a href="handbags.html">Handbags</a>
+      <a href="watches.html">Timepieces</a>
+      <a href="footwear.html">Footwear</a>
+      <a href="jewelry.html">Jewelry</a>
+      <a href="accessories.html">Accessories</a>
+      <a href="trust.html">The Archive</a>
+      <a href="reviews.html">Client Films</a>
+      <div class="drawer-foot">Luxury Affairs · Est. MMXX</div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+      <div class="search-overlay-inner">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search the collection…"
+        />
+        <button class="search-overlay-btn">🔍</button>
+      </div>
+      <div class="search-results" id="search-results"></div>
+      <button class="search-close" id="search-close-btn">✕ Close</button>
+    </div>
+
+    <!-- ══ HERO ════════════════════════════════════════════════ -->
+    <header class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-media">
+        <video src="videos/handbag.mp4" autoplay muted loop playsinline></video>
+      </div>
+      <div class="hero-inner">
+        <div class="hero-eyebrow eyebrow">
+          Private Sourcing House — Est. MMXX
+        </div>
+        <h1 class="hero-title">
+          <span class="line"><span>The Quiet Art</span></span>
+          <span class="line"
+            ><span>of <em>Acquisition.</em></span></span
+          >
+        </h1>
+        <p class="hero-sub">
+          We don't sell products — we open doors. A concierge sourcing service
+          for the pieces the boutiques keep behind the curtain, delivered to
+          your name, worldwide.
+        </p>
+        <div class="hero-cta">
+          <a href="handbags.html" class="btn btn-gold"
+            ><span>Enter the Collection</span><span class="arrow">→</span></a
+          >
+          <a
+            href="https://wa.me/17175385671"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-ghost"
+            ><span>Speak to a Specialist</span></a
+          >
+        </div>
+      </div>
+      <div class="hero-scroll">Scroll</div>
+    </header>
+
+    <!-- ══ MARQUEE ═════════════════════════════════════════════ -->
+    <a href="trust.html" class="ticker in-flow" aria-label="Open the archive">
+      <div class="ticker-track"><!-- populated by initTicker --></div>
+    </a>
+
+    <main>
+      <!-- ══ MANIFESTO ═════════════════════════════════════════ -->
+      <section class="section manifesto">
+        <div class="wrap manifesto-grid">
+          <div data-reveal>
+            <div class="section-head" style="margin-bottom: 26px">
+              <div>
+                <div class="kicker eyebrow">The House</div>
+                <h2 class="manifesto-lead">
+                  Some pieces are bought.<br />The rest are <em>acquired.</em>
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="manifesto-body" data-reveal style="--i: 1">
+            <p>
+              Luxury Affairs is a private sourcing service, established 2020.
+              Fifty thousand pieces across handbags, footwear, jewelry and
+              timepieces — reached directly, without showroom theatre or
+              showroom margins.
+            </p>
+            <p>
+              One conversation on WhatsApp. One specialist. One insured,
+              discreet delivery to your door.
+            </p>
+          </div>
+        </div>
+        <div class="wrap">
+          <div class="pillars" data-reveal style="--i: 2">
+            <div class="pillar">
+              <div class="pillar-n">№ 01</div>
+              <div class="pillar-t">Depth of Access</div>
+              <div class="pillar-d">
+                50,000+ pieces across handbags, footwear, jewelry &amp; watches
+                — sourced on request.
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-n">№ 02</div>
+              <div class="pillar-t">Direct, Always</div>
+              <div class="pillar-d">
+                WhatsApp-direct concierge. No showroom fees, no intermediaries —
+                the piece comes to you.
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-n">№ 03</div>
+              <div class="pillar-t">Discretion Assured</div>
+              <div class="pillar-d">
+                Fully insured, unbranded, signature-on-delivery shipping. Your
+                affairs stay yours.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ STATS ═════════════════════════════════════════════ -->
+      <section class="stat-row" data-reveal="mask">
+        <div class="stat">
+          <div class="stat-num">
+            <span id="stat-maisons" data-count="40" data-suffix="+">0</span>
+          </div>
+          <div class="stat-label">Maisons Represented</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num"><span data-count="6" data-pad="1">0</span></div>
+          <div class="stat-label">Curated Categories</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">3–5<span class="gold">d</span></div>
+          <div class="stat-label">Insured Delivery</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">MMXX</div>
+          <div class="stat-label">House Established</div>
+        </div>
+      </section>
+
+      <!-- ══ EDITORIAL FEATURES ════════════════════════════════ -->
+      <section class="section">
+        <div class="wrap">
+          <div class="feature">
+            <div class="feature-media" data-reveal="mask">
+              <span class="fm-tag">Timepieces</span>
+              <video
+                src="videos/jewelry.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                data-parallax="0.08"
+              ></video>
+            </div>
+            <div data-reveal>
+              <div class="feature-num">CHAPTER — I</div>
+              <h3 class="feature-title">
+                The wrist,<br /><em>considered.</em>
+              </h3>
+              <p class="feature-desc">
+                Datejust to Daytona, and the references between. Every timepiece
+                is photographed on request before a word is asked of you.
+              </p>
+              <a href="watches.html" class="btn btn-ghost"
+                ><span>View Timepieces</span><span class="arrow">→</span></a
+              >
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-media" data-reveal="mask">
+              <span class="fm-tag">Footwear</span>
+              <video
+                src="videos/Shoes.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                data-parallax="0.08"
+              ></video>
+            </div>
+            <div data-reveal>
+              <div class="feature-num">CHAPTER — II</div>
+              <h3 class="feature-title">Grounded<br />in <em>craft.</em></h3>
+              <p class="feature-desc">
+                Slingbacks, loafers, and the pairs that never reach the shelf.
+                Sized, sourced and confirmed before you commit.
+              </p>
+              <a href="footwear.html" class="btn btn-ghost"
+                ><span>View Footwear</span><span class="arrow">→</span></a
+              >
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-media gradient" data-reveal="mask">
+              <span class="fm-tag">High Jewelry</span>
+              <span class="fm-word">Éclat</span>
+            </div>
+            <div data-reveal>
+              <div class="feature-num">CHAPTER — III</div>
+              <h3 class="feature-title">Light, set<br />in <em>gold.</em></h3>
+              <p class="feature-desc">
+                Cartier, Van Cleef, Bulgari and the quiet houses in between —
+                pieces that hold their light, and their story.
+              </p>
+              <a href="jewelry.html" class="btn btn-ghost"
+                ><span>View Jewelry</span><span class="arrow">→</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ MAISON DIRECTORY ══════════════════════════════════ -->
+      <section class="section" style="border-top: 1px solid var(--line)">
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <div>
+              <div class="kicker eyebrow">The Directory</div>
+              <h2 class="section-title">Choose your <em>maison.</em></h2>
+            </div>
+            <a href="handbags.html" class="section-link">Full Collection →</a>
+          </div>
+          <div class="maison-tabs" data-reveal style="--i: 1">
+            <button class="maison-tab active" data-cat="handbags">
+              Handbags
+            </button>
+            <button class="maison-tab" data-cat="watches">Timepieces</button>
+            <button class="maison-tab" data-cat="footwear">Footwear</button>
+            <button class="maison-tab" data-cat="jewelry">Jewelry</button>
+            <button class="maison-tab" data-cat="accessories">
+              Accessories
+            </button>
+          </div>
+          <div data-reveal style="--i: 2">
+            <div class="maison-panel active" data-cat="handbags">
+              <div class="brand-grid" id="maison-handbags"></div>
+            </div>
+            <div class="maison-panel" data-cat="watches">
+              <div class="brand-grid" id="maison-watches"></div>
+            </div>
+            <div class="maison-panel" data-cat="footwear">
+              <div class="brand-grid" id="maison-footwear"></div>
+            </div>
+            <div class="maison-panel" data-cat="jewelry">
+              <div class="brand-grid" id="maison-jewelry"></div>
+            </div>
+            <div class="maison-panel" data-cat="accessories">
+              <div class="brand-grid" id="maison-accessories"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ THE COLLECTORS (client gallery) ═══════════════════ -->
+      <section
+        class="section"
+        style="padding-inline: 0; border-top: 1px solid var(--line)"
+      >
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <div>
+              <div class="kicker eyebrow">The Collectors</div>
+              <h2 class="section-title">In good <em>company.</em></h2>
+            </div>
+            <a href="trust.html" class="section-link">Open the Archive →</a>
+          </div>
+        </div>
+        <div class="strip-fade" data-reveal style="--i: 1">
+          <div class="scroll-strip">
+            <div class="scroll-track" id="clients-track"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ THE ARCHIVE (deliveries) ══════════════════════════ -->
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <div>
+              <div class="kicker eyebrow">The Archive</div>
+              <h2 class="section-title">
+                Every delivery,<br /><em>documented.</em>
+              </h2>
+            </div>
+            <a href="trust.html" class="section-link">Browse All Records →</a>
+          </div>
+          <div class="txn-grid" data-reveal style="--i: 1" id="txn-grid"></div>
+        </div>
+      </section>
+
+      <!-- ══ THE FINISHING TOUCHES ═════════════════════════════ -->
+      <section class="section" style="border-top: 1px solid var(--line)">
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <div>
+              <div class="kicker eyebrow">Essentials</div>
+              <h2 class="section-title">The finishing <em>touches.</em></h2>
+            </div>
+          </div>
+          <div data-reveal style="--i: 1" id="essentials-grid"></div>
+        </div>
+      </section>
+
+      <!-- ══ CLOSING ═══════════════════════════════════════════ -->
+      <section class="closing">
+        <div class="wrap closing-inner">
+          <h2 class="closing-title" data-reveal>
+            Begin the<br /><em>conversation.</em>
+          </h2>
+          <p class="closing-sub" data-reveal style="--i: 1">
+            Seen something elsewhere you couldn't reach? Send a photograph on
+            WhatsApp — if it exists, we will find it.
+          </p>
+          <div data-reveal style="--i: 2">
+            <a
+              href="https://wa.me/17175385671"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-wa"
+              data-magnetic
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="#fff"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                />
+              </svg>
+              <span>Message the House</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ══ FOOTER ══════════════════════════════════════════════ -->
+    <footer>
+      <div class="footer-logo">
+        <span class="brand-w">LUXURY</span> <span class="brand-g">AFFAIRS</span>
+      </div>
+      <div class="footer-tagline">The quiet art of acquisition.</div>
+      <div class="footer-socials">
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener"
+          class="social-btn"
+          title="Instagram"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://wa.me/17175385671"
+          target="_blank"
+          rel="noopener"
+          class="social-btn"
+          title="WhatsApp"
+          style="background: #25d366; border-color: #25d366; color: #fff"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+            />
+          </svg>
+        </a>
+      </div>
+      <div class="footer-copy">© 2026 Luxury Affairs · All rights reserved</div>
+    </footer>
+
+    <!-- ══ FLOATING WA ═════════════════════════════════════════ -->
+    <div class="float-wa">
+      <div class="float-wa-label">Consult a Specialist</div>
+      <a
+        href="https://wa.me/17175385671"
+        target="_blank"
+        rel="noopener"
+        class="float-wa-btn"
+        aria-label="WhatsApp"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="58"
+          height="58"
+          viewBox="0 0 24 24"
+        >
+          <circle cx="12" cy="12" r="12" fill="#25d366" />
+          <path
+            fill="#fff"
+            transform="translate(4.8 4.8) scale(0.6)"
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+          />
+        </svg>
       </a>
     </div>
-    <div class="hero-search">
-      <input type="text" id="search-input-hero" placeholder="Search luxury items…" readonly onclick="document.getElementById('nav-search-btn').click()">
-      <button onclick="document.getElementById('nav-search-btn').click()">GO</button>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lb-close">✕</button>
+      <img id="lightbox-img" src="" alt="Fullscreen" />
     </div>
-  </div>
 
-  <!-- ── About Us Card ─────────────────────────────────────── -->
-  <div class="about-card">
-    <div class="about-label">About Us</div>
-    <ul>
-      <li><strong>50k+ Items</strong> (Handbags, Footwear, Jewelry, Watches)</li>
-      <li><strong>WhatsApp-Direct</strong> (No showroom fees, direct sourcing)</li>
-      <li><strong>Secure &amp; Discreet Delivery</strong> (Fully insured shipping USA)</li>
-    </ul>
-  </div>
-
-  <!-- ── Catalog Sections ──────────────────────────────────── -->
-  <div class="catalog-sections">
-
-  <!-- ══ LUXURY HANDBAGS ══════════════════════════════════════ -->
-  <section class="section">
-    <div class="sec-header">
-      <h2 class="sec-title">Luxury Handbags</h2>
-      <a href="handbags.html" class="sec-view-all">View All →</a>
-    </div>
-    <div class="brand-grid" id="handbags-grid"></div>
-    <div class="section-video-wrap section-divider">
-      <video
-        class="section-video"
-        src="videos/handbag.mp4"
-        autoplay muted loop playsinline>
-      </video>
-    </div>
-  </section>
-
-  <!-- ══ TIMEPIECE SWISS GRID ═══════════════════════════════ -->
-  <section class="section">
-    <div class="sec-header">
-      <h2 class="sec-title">Timepiece <span class="gold">Swiss Grid</span></h2>
-      <a href="watches.html" class="sec-view-all">View All →</a>
-    </div>
-    <div class="brand-grid" id="watches-grid"></div>
-    <div class="section-video-wrap section-divider">
-      <video
-        class="section-video"
-        src="videos/jewelry.mp4"
-        autoplay muted loop playsinline>
-      </video>
-    </div>
-  </section>
-
-  <!-- ══ HAPPY CLIENTS ════════════════════════════════════════ -->
-  <section class="section">
-    <div class="sec-header">
-      <h2 class="sec-title">Happy Clients</h2>
-    </div>
-    <div class="scroll-strip no-scroll-strip">
-      <div class="scroll-track no-scroll-track" id="clients-track"></div>
-    </div>
-  </section>
-
-  <!-- ══ LUXURY FOOTWEAR ══════════════════════════════════════ -->
-  <section class="section">
-    <div class="sec-header">
-      <h2 class="sec-title">Footwear (Designer &amp; Street)</h2>
-      <a href="footwear.html" class="sec-view-all">View All →</a>
-    </div>
-    <div class="brand-grid" id="footwear-grid"></div>
-    <div class="section-video-wrap section-divider">
-      <video
-        class="section-video"
-        src="videos/Shoes.mp4"
-        autoplay muted loop playsinline>
-      </video>
-    </div>
-  </section>
-
-  <!-- ══ HIGH JEWELRY & FINE METALS ═══════════════════════════ -->
-  <section class="section">
-    <div class="sec-header">
-      <h2 class="sec-title">High Jewelry &amp; Fine Metals</h2>
-      <a href="jewelry.html" class="sec-view-all">View All →</a>
-    </div>
-    <div class="brand-grid" id="jewelry-grid"></div>
-  </section>
-
-  <!-- ══ RECENT VERIFIED TRANSACTIONS ════════════════════════ -->
-  <section class="section">
-    <div class="sec-header">
-      <h2 class="sec-title">Recent Verified Transactions</h2>
-    </div>
-    <div class="txn-grid" id="txn-grid"></div>
-  </section>
-
-  <!-- ══ THE FINISHING TOUCHES — ESSENTIALS ═══════════════════ -->
-  <section class="section">
-    <div class="sec-header">
-      <h2 class="sec-title">The Finishing Touches <span class="gold">(Essentials)</span></h2>
-    </div>
-    <div id="essentials-grid"></div>
-  </section>
-
-  </div><!-- /.catalog-sections -->
-
-</main>
-
-<!-- ══ FOOTER WA BAR ═══════════════════════════════════════ -->
-<div style="padding:24px 16px 0; max-width:560px; margin:0 auto;">
-  <a href="https://wa.me/17175385671" target="_blank" class="footer-wa-bar">
-    <div class="fwb-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-    </div>
-    <div class="fwb-text">
-      <div class="fwb-t1">Don't see what you're looking for?</div>
-      <div class="fwb-t2">Upload a photo on WhatsApp and we will find it.</div>
-    </div>
-    <div class="fwb-arrow">&#8594;</div>
-  </a>
-</div>
-
-<!-- ══ FOOTER ═══════════════════════════════════════════════ -->
-<footer>
-  <div class="footer-logo">
-    <span class="brand-w">LUXURY </span><span class="brand-g">AFFAIRS</span><span class="brand-w"> STORE</span>
-  </div>
-  <div class="footer-tagline">The World's Finest Private Luxury Collection.</div>
-  <div class="footer-socials">
-    <a href="https://instagram.com" target="_blank" class="social-btn" title="Instagram" style="background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);border-color:transparent;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-    </a>
-    <a href="https://wa.me/17175385671" target="_blank" class="social-btn" title="WhatsApp" style="background:#25d366;border-color:#25d366;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-    </a>
-  </div>
-  <div class="footer-copy">© 2026 Luxury Affairs Store. All rights reserved.</div>
-</footer>
-
-<!-- ══ FLOATING WA ══════════════════════════════════════════ -->
-<div class="float-wa">
-  <div class="float-wa-label">CONSULT WITH A LUXURY SPECIALIST</div>
-  <a href="https://wa.me/17175385671" target="_blank" class="float-wa-btn">
-    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#25d366"/><path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-  </a>
-</div>
-
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lb-close">✕</button>
-  <img id="lightbox-img" src="" alt="Fullscreen">
-</div>
-
-<script src="js/main.js?v=20260608-2"></script>
-</body>
+    <script src="js/main.js?v=20260719"></script>
+  </body>
 </html>
